@@ -7,7 +7,7 @@
     |  /  | / ((____   // ((____   ((___/ / // / /  / / ((____     
 
 
-    JavaScript is a fascinating framework, originally built to operate on the browser. 
+    JavaScript is a fascinating language, originally built to operate on the browser. 
     Node is a framework built on top of JavaScript, that allows it to also be executed on 
     other ecosystems, such as on a script in your computer. 
     
@@ -42,7 +42,7 @@
 
 */
 
-console.log(' HELLO WORLD :) ');
+console.log(" HELLO WORLD :) ");
 
 /*
 
