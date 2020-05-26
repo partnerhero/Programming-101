@@ -12,7 +12,19 @@ let axios = require("axios");
 /*
     Axios relies on JavaScript Promise syntax, which is useful for asynchronous operations
 
-The syntax is simple:
+    ----------------------------------------------------------------------
+    Parenthesis - Don't know what async is? 
+  
+    Anything that requires waiting for. 
+    In JavaScript, operations like adding two numbers or assigning a variable are synchronous.
+    Operations that require HTTP are asynchronous. 
+
+    So, anything we do with Axios will be async. This is because 
+    getting the request back takes time, and we need to wait for the server.
+
+    ----------------------------------------------------------------------
+
+Now, going back to Axios- the syntax is simple:
 
 axios.verb(<url>).then((response) => {
     console.log(response)
@@ -23,27 +35,6 @@ To make a GET request to any URL and log the response:
 axios.get(<url>).then((response) => {
   console.log(response);
 });
-
-To make a POST request to a URL and include some parameters:
-
-axios.post('http://www.someapi.com/create_user', {
-    firstName: 'Fred',
-    lastName: 'Flintstone'
-  })
-  .then((response) => {
-    console.log(response);
-  })
-*/
-
-/*
-  Parenthesis - Don't know what async is? 
-  
-    Anything that requires waiting for. 
-    In JavaScript, operations like adding two numbers or assigning a variable are synchronous.
-    Operations that require HTTP, or that interact with the filesystem are asynchronous. 
-
-    So, anything we do with Axios will be async.
-
 */
 
 // To make our first HTTP requests, we'll be using a dummyAPI (http://dummy.restapiexample.com/api/v1/)
