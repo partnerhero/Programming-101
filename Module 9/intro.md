@@ -19,7 +19,7 @@ your information. Then, the Facebook server responds with another HTTP request c
 
 The flow usually goes something like this:
 
-![diagram](https://github.com/partnerhero/node-workshop/blob/master/assets/diagram1.png?raw=true)
+![diagram](https://github.com/partnerhero/node-workshop/blob/master/Module%209/assets/diagram1.png?raw=true)
 
 ##### What data can HTTP transport?
 HTTP is designed to support multiple data types, including large data structures and rich media. Using HTTP, you can send
