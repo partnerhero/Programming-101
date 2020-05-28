@@ -17,10 +17,9 @@ We'll learn what HTTP requests are, how are they helpful, their downsides, and h
 HTTP is a protocol for distributed information systems. It is the standard for cross-system communication, and it is
 used by all modern webservers to send and receive data.
 
-Let's think about this in the context of a Facebook Login.
+Let's think about this in the context of logging in to ~Facebook~ Myspace.
 
-When you log in to Facebook, your browser (a client) sends an HTTP request to Facebook (a server) containing
-your information. Then, the Facebook server responds with another HTTP request containing either a success or error response.
+When you log in to Myspace, there are technically two parties communicating - your browser (the client), and Myspace (the server). When you click on the login button, your browser sends an HTTP request to Myspace containing information like your email and password. Myspace then verifies if that information is correct, and responds with either a "success" or a "failed" message.
 
 The flow usually goes something like this:
 
