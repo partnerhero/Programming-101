@@ -1,0 +1,14 @@
+{
+  "name": "learning_http",
+  "version": "1.0.0",
+  "description": "I am learning HTTP and Axios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "daniel@partnerhero.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}

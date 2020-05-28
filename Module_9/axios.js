@@ -12,17 +12,17 @@ let axios = require("axios");
 /*
     Axios relies on JavaScript Promise syntax, which is useful for asynchronous operations
 
-    ----------------------------------------------------------------------
-    Parenthesis - Don't know what async is? 
-  
-    Anything that requires waiting for. 
-    In JavaScript, operations like adding two numbers or assigning a variable are synchronous.
-    Operations that require HTTP are asynchronous. 
+----------------------------------------------------------------------
+Parenthesis - Don't know what async is? 
 
-    So, anything we do with Axios will be async. This is because 
-    getting the request back takes time, and we need to wait for the server.
+Anything that requires waiting for. 
+In JavaScript, operations like adding two numbers or assigning a variable are synchronous.
+Operations that require HTTP are asynchronous. 
 
-    ----------------------------------------------------------------------
+So, anything we do with Axios will be async. This is because 
+getting the request back takes time, and we need to wait for the server.
+
+----------------------------------------------------------------------
 
 Now, going back to Axios- the syntax is simple:
 

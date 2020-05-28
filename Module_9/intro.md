@@ -17,7 +17,9 @@ We'll learn what HTTP requests are, how are they helpful, their downsides, and h
 HTTP is a protocol for distributed information systems. It is the standard for cross-system communication, and it is
 used by all modern webservers to send and receive data.
 
-For example, when you log in to Facebook, your browser (a client) sends an HTTP request to Facebook (a server) containing
+Let's think about this in the context of a Facebook Login.
+
+When you log in to Facebook, your browser (a client) sends an HTTP request to Facebook (a server) containing
 your information. Then, the Facebook server responds with another HTTP request containing either a success or error response.
 
 The flow usually goes something like this:
@@ -38,3 +40,9 @@ and receive:
 
 1. Axios - an easy-to-use Node-based HTTP client designed to work with ES6
 2. A dummy Rest API
+
+###### Notes
+
+Look into a way of easing into the concept of HTTP. Something slightly tangential that they can relate back to what HTTP is and the purpose it serves.
+
+Consider comparing it to a real world example. Delivering a package, making a phone call, sending an SMS, etc. This could even the Facebook example.
