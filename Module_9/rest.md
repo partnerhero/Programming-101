@@ -45,5 +45,5 @@ https://notekeeper.com/api/deletenote
 
 Now, how do we use CRUDs in real life? How will we use CRUDs today?
 
-Through :three: HTTP verbs 
+Through :three: [HTTP verbs](https://github.com/partnerhero/node-workshop/blob/master/Module_9/verbs.md) 
 
