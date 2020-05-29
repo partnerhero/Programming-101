@@ -21,7 +21,9 @@ Let's think about this in the context of logging in to ~Facebook~ Myspace.
 
 When you log in to Myspace, there are technically two parties communicating - your browser (the client), and Myspace (the server). When you click on the login button, your browser sends an HTTP request to Myspace containing information like your email and password. Myspace then verifies if that information is correct, and responds with either a "success" or a "failed" message.
 
-The flow usually goes something like this:
+The flow would look something like this:
+
+And if we abstract the concepts, this is what an HTTP interaction looks like:
 
 ![diagram](https://github.com/partnerhero/node-workshop/blob/master/Module_9/assets/diagram1.png?raw=true)
 
