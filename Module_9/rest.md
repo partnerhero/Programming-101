@@ -31,9 +31,17 @@ Are you telling me that we need to do this every time we want to just edit a sim
 
 #### Just Kidding - API
 
-REST allows us to do this, by enabling developers to open "points of access" in our application that do these things. These points of access (or endpoints) are usually exposed in what we call an API, or application programming interface.
+REST allows developers to standardize CRUD actions by creating "endpoints" in our application that do these things. These endpoints are usually exposed in what we call an API, or application programming interface.
+
+(an endpoint, is just a URL within our app that can receive requests regarding a certain action.)
 
 In our case, our API would be a simple set of 4 endpoints, one for each CRUD action. This really simplifies the flow of our app, since it allows us to really cleanly define the requirements for each action that affects an entity in our database. 
+
+For example:
+https://notekeeper.com/api/createnote
+https://notekeeper.com/api/readnote
+https://notekeeper.com/api/updatenote
+https://notekeeper.com/api/deletenote
 
 Now, how do we use CRUDs in real life? How will we use CRUDs today?
 
