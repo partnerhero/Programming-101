@@ -45,3 +45,5 @@ Now, name the response code.
     4. On request 5, only 1 note is found that matches the query.
 
 ###### Now we're ready to start doing HTTP requests ourselves!
+
+But not before a [quick derail](https://github.com/partnerhero/node-workshop/blob/master/Module_9/npm.md) :station:
