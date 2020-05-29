@@ -5,11 +5,9 @@ The verb is used to define the action intended by the request.
 
 In this workshop, we'll look at the three primary verbs:
 
-    1. GET - used for retrieving data
-    2. POST - used for creating new data
-    3. PUT - used for replacing data
-
-TODO - Add examples here
+    1. GET - used for retrieving data (fetch data for a user)
+    2. POST - used for creating new data (create a new user)
+    3. PUT - used for replacing data (update a user)
 
 ###### Each of these verbs expects some sort of response. A GET verb would expect the data being requested, while a POST or PUT verb just expects an indication that the request was successful.
 
