@@ -37,11 +37,11 @@ REST allows developers to standardize CRUD actions by creating "endpoints" in ou
 
 In our case, our API would be a simple set of 4 endpoints, one for each CRUD action. This really simplifies the flow of our app, since it allows us to really cleanly define the requirements for each action that affects an entity in our database. 
 
-For example:
-https://notekeeper.com/api/createnote
-https://notekeeper.com/api/readnote
-https://notekeeper.com/api/updatenote
-https://notekeeper.com/api/deletenote
+For example:  
+https://notekeeper.com/api/createnote  
+https://notekeeper.com/api/readnote  
+https://notekeeper.com/api/updatenote  
+https://notekeeper.com/api/deletenote  
 
 Now, how do we use CRUDs in real life? How will we use CRUDs today?
 
