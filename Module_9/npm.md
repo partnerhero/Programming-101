@@ -1,8 +1,10 @@
 ##### Quick Derail
 
-<note> Add a paragraph here that explains how code projects sometimes rely on custom code, before introducing NPM. Also explain what dependencies are on our context. Try to be clear about package and dependency being the same thing. 'a pkg becomes a dependency when you install it on your project' </note>
+Code projects almost always will rely on third-party, or custom code. You may want to import either a utility library, or just another package that already does something that would be too complex to write ourselves. 
 
-NPM is a useful package manager that comes with new versions of Node. It allows developers to easily install and manage 3rd party packages- these can be utilities or entire web frameworks.
+There are many ways to import code into our project, and those vary depending on the language and framework. Fortunately, Node has a super simple way to manage this, called **NPM - or Node Package Manager.**
+
+NPM comes with new versions of Node, and allows developers to easily install and manage 3rd party packages- which can be utilities or entire web frameworks.
 
 NPM works with a local file, called a `package.json`. This file is just a manifesto that includes the dependencies and version a certain project requires.
 
