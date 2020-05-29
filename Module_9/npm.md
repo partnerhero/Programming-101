@@ -32,3 +32,7 @@ Once we've finished, let's install our first dependency: axios.
 `npm install axios --save` to install axios locally
 
 To confirm axios is installed, we can look at our package.json and it should be listed under dependencies.
+
+###### [Now let's break Facebook](https://media.tenor.co/images/9e291eef3933a6bd37da881b7cc05443/raw)
+
+###### [Now let's do some requests!](https://github.com/partnerhero/node-workshop/blob/master/Module_9/axios.js)
