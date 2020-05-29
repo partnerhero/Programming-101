@@ -41,10 +41,6 @@ and receive:
 ##### What tools will we use to learn HTTP?
 
 1. Axios - an easy-to-use Node-based HTTP client designed to work with ES6
-2. A dummy Rest API
+2. A dummy REST API
 
-###### Notes
-
-Look into a way of easing into the concept of HTTP. Something slightly tangential that they can relate back to what HTTP is and the purpose it serves.
-
-Consider comparing it to a real world example. Delivering a package, making a phone call, sending an SMS, etc. This could even the Facebook example.
+[So what is that word you used, REST?](https://github.com/partnerhero/node-workshop/blob/master/Module_9/rest.md) 
