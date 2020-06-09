@@ -38,7 +38,7 @@ JavaScript (and therefore Node) are synchronous and single-threaded by nature. T
 
 The syntax for promises is very simple:
 ```
-const myFunction = new Promise((resolve, reject) => {
+    new Promise((resolve, reject) => {
         // do something...
         if (success) resolve('finished executing!');
         else reject('whoops!');
@@ -78,7 +78,7 @@ getMeAMullet().then(result => {
 
 Notice how the `.then` statement handles whatever gets resolved, whereas `.catch` handles whatever was rejected.
 
-To apply this in practice, let's declare a function that waits until a for loop is finished iterating before resolving:
+To apply this in practice, let's declare a function that returns a promise (IOW, a _nested_ promise). That promise waits until a for loop is finished iterating before resolving:
 ```
 const myAsyncFunction = () => {
     return new Promise((resolve, reject) => {
@@ -89,6 +89,18 @@ const myAsyncFunction = () => {
 }
 ```
 
+This is very powerful, because it let's you execute that promise through the function that is being called. This means you could do:
+```
+myAsyncFunction().then(result => {
+    console.log(result);
+})
+```
+
+#### Nested promises
+
+Nested promises are particularly useful for complex operations that involve one or more async operations. Going back to axios and HTTP, imagine you were tasked with the following:
+
+> Write a function that GETs a certain employee's data from the [dummy API](http://dummy.restapiexample.com/), increments the "age" property by one, and POSTs that data back to the API.
 
 
 
