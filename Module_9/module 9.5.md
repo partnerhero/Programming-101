@@ -115,12 +115,12 @@ Now, let's try switching the `resolve` for a `reject`, and let's add a `.catch` 
 
 Going back to axios and HTTP, imagine you were tasked with the following:
 
-> Write a function that retrieves a certain employee's data from the [dummy API](http://dummy.restapiexample.com/), increments the "age" property by one, and then updates that data on the API.
+> You are a web developer and just finished a pet blog for a client, called Dogz and Catz. The blog is connected to a database through an API. Now, your client wants to clasify articles by adding the words "CAT" or "DOG" to the end of article titles. He asks you to work on a function that lets him do this easily to already existing artiles.
 
 The statement above gives us a number of requirements to work through:
-1. We need to first retrieve data for an employee. (GET)
-2. Using that data, we need to increase the age property by exactly 1. 
-3. We then need to update that data back. (PUT)
+1. We need to first retrieve data for a blog article. We would need an `articleId` parameter to do that. (GET)
+2. Using that data, we need to append the word "CAT" or "DOG" to the article title. We'll need a `keyword` parameter. 
+3. We then need to update that data through the API. (PUT)
 
 Let's break this down into steps:
 
@@ -128,41 +128,41 @@ Let's break this down into steps:
 ```
 const axios = require('axios');
 
-const API_URL = 'http://dummy.restapiexample.com/api/v1/';
+const API_URL = 'https://jsonplaceholder.typicode.com/posts/';
 ```
 
 2. Now, let's write our master function that'll call all other functions. For now, it'll only resolve `true`.
 ```
-const increaseEmployeeAge = () => new Promise((resolve, reject) => {
+const updateArticleTitle = () => new Promise((resolve, reject) => {
     resolve(true);
 });
 ```
 
-3. Let's write a function to retrieve an employee's data through a GET request. Keep in mind, we don't know the employee's ID yet so we'll need to accept `employeeId` as a parameter. Remember we only care about `result.data`, not the entire HTTP result:
+3. Let's write a function to retrieve an article's data through a GET request. Keep in mind, we don't know the article's ID yet so we'll need to accept `articleId` as a parameter. Remember we only care about `result.data`, not the entire HTTP result:
 ```
-const fetchEmployeeData = (employeeId) => new Promise((resolve, reject) => {
-    axios.get(API_URL + 'employee/' + employeeId).then(result => {
+const fetchArticleData = (articleId) => new Promise((resolve, reject) => {
+    axios.get(API_URL + articleId).then(result => {
         resolve(result.data);
     });
 });
 ``` 
 
-4. Let's write a function for updating employee information through a PUT request. We will also need to accept `employeeId` here, in addition to the `data` being updated:
+4. Let's write a function for updating article data through a PUT request. We will also need to accept `articleId` here, in addition to the `data` being updated:
 ```
-const updateEmployeeData = (employeeId, data) => new Promise((resolve, reject) => {
-    axios.put(API_URL + 'update/' + employeeId, { data }).then(result => {
+const updateArticleData = (articleId, data) => new Promise((resolve, reject) => {
+    axios.put(API_URL + articleId, { data }).then(result => {
          resolve(result.data);
     })
 });
 ```
 
-5. Let's now rewrite our master function so that it accepts an `employeeId` parameter, and let's plug in the `fetchEmployeeData` function. We'll also add the age increment using the `++` operator:
+5. Let's now rewrite our master function so that it accepts an `articleId` and `keyword` paramters. Let's also plug in the `fetchArticleData` function. We can update the title by appending `keyword` to `article.title`.
 ```
-const increaseEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
-    // get employee data...
-    fetchEmployeeData(employeeId).then(employeeData => {
-        // increase age by 1...
-        employeeData.age ++;
+const updateArticleTitle = (articleId, keyword) => new Promise((resolve, reject) => {
+    // get article data...
+    fetchArticleData(articleId).then(articleData => {
+        // add keyword to end of title
+        articleData.title = articleData.title + keyword; 
     })
 });
 
@@ -170,13 +170,13 @@ const increaseEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
 
 6. Now that we're getting data and updating the date property, let's plug in our `updateEmployeeData` function:
 ```
-const updateEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
-    // get employee data...
-    fetchEmployeeData(employeeId).then(employeeData => {
-        // increase age by 1...
-        employeeData.age ++;
-        // update employee data...
-        updateEmployeeData(employeeId, employeeData).then(result => {
+const updateArticleTitle = (articleId, keyword) => new Promise((resolve, reject) => {
+    // get article data...
+    fetchArticleData(articleId).then(articleData => {
+        // add keyword to end of title
+        articleData.title = articleData.title + keyword; 
+        // update article...
+        updateArticleData(articleId, articleData).then(result => {
             //finish!
             resolve(result);
         })
@@ -185,11 +185,12 @@ const updateEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
 
 ```
 
-7. Let's execute our master function and see if it works! Remember to pass in an `employeeId`.
+7. Let's execute our master function and see if it works! Remember to pass in an `articleId` and `keyword`.
 ```
-updateEmployeeAge(150).then(result => {
+updateArticleTitle(1, "CAT").then(result => {
     console.log(result);
 });
 ```
 
+#### What we learned today
 
