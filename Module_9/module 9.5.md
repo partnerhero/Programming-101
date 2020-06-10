@@ -83,38 +83,113 @@ getMeAMullet().then(result => {
 
 Notice how the `.then` statement handles whatever gets resolved, whereas `.catch` handles whatever was rejected.
 
-To apply this in practice, let's declare a function that returns a promise that waits until a for loop is finished iterating before resolving:
+#### Nested promises - Practice
+
+You can also nest promises so that they live inside of a function. This is super helpful because it lets you pass parameters on to the promise.
+
+The syntax is very similar:
 ```
-const myAsyncFunction = () => new Promise((resolve, reject) => {
-        for (let i = 0; i < 10; i++) {
-            if (i === 9) resolve('finished!');
+const asyncFunc = () => new Promise((resolve, reject) => { resolve('finished!); })
+```
+
+To apply this in practice, let's declare a function that accepts a parameter `loopLength`, and returns a promise (called a nested promise) that resolves until a for loop is finished iterating:
+```
+const myAsyncFunction = (waitUntil) => new Promise((resolve, reject) => {
+        for (let i = 0; i < loopLength; i++) {
+            if (i === loopLength - 1) resolve('finished!');
         }
 });
 ```
+Notice the `() => new Promise` syntax - it allows us to pass parameters on to a promise!
 
 To execute our function, we would call it and append a `.then` statement at the end:
 ```
-myAsyncFunction().then(result => {
+myAsyncFunction(100).then(result => {
     console.log(result);
 })
 ```
 
 Now, let's try switching the `resolve` for a `reject`, and let's add a `.catch` block to ensure we catch any rejections or errors.
 
-#### Nested promises - Practice
-
-You can nest promises like you would with functions - IOW, you can have one promise wait for another promise's execution. Nested promises are particularly useful for complex operations that involve one or more async operations. 
+#### Practice Problem(s) 
 
 Going back to axios and HTTP, imagine you were tasked with the following:
 
-> Write a function that GETs a certain employee's data from the [dummy API](http://dummy.restapiexample.com/), increments the "age" property by one, and POSTs that data back to the API.
+> Write a function that retrieves a certain employee's data from the [dummy API](http://dummy.restapiexample.com/), increments the "age" property by one, and then updates that data on the API.
 
+The statement above gives us a number of requirements to work through:
+1. We need to first retrieve data for an employee. (GET)
+2. Using that data, we need to increase the age property by exactly 1. 
+3. We then need to update that data back. (PUT)
 
+Let's break this down into steps:
 
-1. Quick recap on module 9 and continue on POST and PUT
-2. A more thorough look on Promises - Dan to write up a quick draft
-3. RequestBin
-4. Cover parameters on GET request
-5. Practical / interactive tasks on making requests - Dan to write up 1-2 examples
+1. Let's first declare the constants we'll need for this problem, axios and the API_URL:
+```
+const axios = require('axios');
+
+const API_URL = 'http://dummy.restapiexample.com/api/v1/';
+```
+
+2. Now, let's write our master function that'll call all other functions. For now, it'll only resolve `true`.
+```
+const increaseEmployeeAge = () => new Promise((resolve, reject) => {
+    resolve(true);
+})
+```
+
+3. Let's write a function to retrieve an employee's data through a GET request. Keep in mind, we don't know the employee's ID yet so we'll need to accept `employeeId` as a parameter. Remember we only care about `result.data`, not the entire HTTP result:
+```
+const fetchEmployeeData = (employeeId) => new Promise((resolve, reject) => {
+    axios.get(API_URL + 'employee/' + employeeId).then(result => {
+        resolve(result.data);
+    })
+})
+``` 
+
+4. Let's write a function for updating employee information through a PUT request. We will also need to accept `employeeId` here, in addition to the `data` being updated:
+```
+const updateEmployeeData = (employeeId, data) => new Promise((resolve, reject) => {
+    axios.put(API_URL + 'update/' + employeeId, data).then(result => {
+         resolve(result.data);
+    })
+}) 
+```
+
+5. Let's now rewrite our master function so that it accepts an `employeeId` parameter, and let's plug in the `fetchEmployeeData` function. We'll also add the age increment using the `++` operator:
+```
+const increaseEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
+    // get employee data...
+    fetchEmployeeData(employeeId).then(employeeData => {
+        // increase age by 1...
+        employeeData.age ++;
+    })
+}
+
+```
+
+6. Now that we're getting data and updating the date property, let's plug in our `updateEmployeeData` function:
+```
+const updateEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
+    // get employee data...
+    fetchEmployeeData(employeeId).then(employeeData => {
+        // increase age by 1...
+        employeeData.age ++;
+        // update employee data...
+        updateEmployeeData(employeeId, employeeData).then(result => {
+            //finish!
+            resolve(result);
+        })
+    })
+}
+
+```
+
+7. Let's execute our master function and see if it works! Remember to pass in an `employeeId`.
+```
+updateEmployeeAge(150).then(result => {
+    console.log(result);
+})
+```
 
 
