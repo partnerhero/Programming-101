@@ -150,7 +150,7 @@ const fetchEmployeeData = (employeeId) => new Promise((resolve, reject) => {
 4. Let's write a function for updating employee information through a PUT request. We will also need to accept `employeeId` here, in addition to the `data` being updated:
 ```
 const updateEmployeeData = (employeeId, data) => new Promise((resolve, reject) => {
-    axios.put(API_URL + 'update/' + employeeId, data).then(result => {
+    axios.put(API_URL + 'update/' + employeeId, { data }).then(result => {
          resolve(result.data);
     })
 });
