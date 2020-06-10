@@ -135,7 +135,7 @@ const API_URL = 'http://dummy.restapiexample.com/api/v1/';
 ```
 const increaseEmployeeAge = () => new Promise((resolve, reject) => {
     resolve(true);
-})
+});
 ```
 
 3. Let's write a function to retrieve an employee's data through a GET request. Keep in mind, we don't know the employee's ID yet so we'll need to accept `employeeId` as a parameter. Remember we only care about `result.data`, not the entire HTTP result:
@@ -143,8 +143,8 @@ const increaseEmployeeAge = () => new Promise((resolve, reject) => {
 const fetchEmployeeData = (employeeId) => new Promise((resolve, reject) => {
     axios.get(API_URL + 'employee/' + employeeId).then(result => {
         resolve(result.data);
-    })
-})
+    });
+});
 ``` 
 
 4. Let's write a function for updating employee information through a PUT request. We will also need to accept `employeeId` here, in addition to the `data` being updated:
@@ -153,7 +153,7 @@ const updateEmployeeData = (employeeId, data) => new Promise((resolve, reject) =
     axios.put(API_URL + 'update/' + employeeId, data).then(result => {
          resolve(result.data);
     })
-}) 
+});
 ```
 
 5. Let's now rewrite our master function so that it accepts an `employeeId` parameter, and let's plug in the `fetchEmployeeData` function. We'll also add the age increment using the `++` operator:
@@ -164,7 +164,7 @@ const increaseEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
         // increase age by 1...
         employeeData.age ++;
     })
-}
+});
 
 ```
 
@@ -181,7 +181,7 @@ const updateEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
             resolve(result);
         })
     })
-}
+});
 
 ```
 
@@ -189,7 +189,7 @@ const updateEmployeeAge = (employeeId) => new Promise((resolve, reject) => {
 ```
 updateEmployeeAge(150).then(result => {
     console.log(result);
-})
+});
 ```
 
 
