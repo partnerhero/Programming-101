@@ -95,6 +95,8 @@ const asyncFunc = () => new Promise((resolve, reject) => { resolve('finished!); 
 To apply this in practice, let's declare a function that accepts a parameter `loopLength`, and returns a promise (called a nested promise) that resolves until a for loop is finished iterating:
 ```
 const myAsyncFunction = (loopLength) => new Promise((resolve, reject) => {
+        if (typeof loopLength !== 'number') reject('Looplength needs to be a number!');
+        
         for (let i = 0; i < loopLength; i++) {
             if (i === loopLength - 1) resolve('finished!');
         }
@@ -104,12 +106,12 @@ Notice the `() => new Promise` syntax - it allows us to pass parameters on to a 
 
 To execute our function, we would call it and append a `.then` statement at the end:
 ```
-myAsyncFunction(100).then(result => {
+myAsyncFunction().then(result => {
     console.log(result);
+}).catch(error => {
+    console.log(error);
 })
 ```
-
-Now, let's try switching the `resolve` for a `reject`, and let's add a `.catch` block to ensure we catch any rejections or errors.
 
 #### Practice Problem(s) 
 
