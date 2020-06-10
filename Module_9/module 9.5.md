@@ -170,7 +170,7 @@ const updateArticleTitle = (articleId, keyword) => new Promise((resolve, reject)
 
 ```
 
-6. Now that we're getting data and updating the date property, let's plug in our `updateEmployeeData` function:
+6. Now that we're getting data and updating the date property, let's plug in our `updateArticleData` function:
 ```
 const updateArticleTitle = (articleId, keyword) => new Promise((resolve, reject) => {
     // get article data...
