@@ -94,7 +94,7 @@ const asyncFunc = () => new Promise((resolve, reject) => { resolve('finished!); 
 
 To apply this in practice, let's declare a function that accepts a parameter `loopLength`, and returns a promise (called a nested promise) that resolves until a for loop is finished iterating:
 ```
-const myAsyncFunction = (waitUntil) => new Promise((resolve, reject) => {
+const myAsyncFunction = (loopLength) => new Promise((resolve, reject) => {
         for (let i = 0; i < loopLength; i++) {
             if (i === loopLength - 1) resolve('finished!');
         }
