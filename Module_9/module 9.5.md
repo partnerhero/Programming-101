@@ -106,7 +106,7 @@ Notice the `() => new Promise` syntax - it allows us to pass parameters on to a 
 
 To execute our function, we would call it and append a `.then` statement at the end:
 ```
-myAsyncFunction().then(result => {
+myAsyncFunction(100).then(result => {
     console.log(result);
 }).catch(error => {
     console.log(error);
