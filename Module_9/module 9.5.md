@@ -74,7 +74,7 @@ What do you think would happen if `correctAddress = false`?
 
 If we wanted to call `getMeAMullet`, we would need to apply the same `.then` syntax that we used with axios requests:
 ```
-getMeAMullet().then(result => {
+getMeAMullet.then(result => {
     console.log(result);
  }).catch(error => {
     console.log(error);
