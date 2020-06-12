@@ -117,12 +117,14 @@ myAsyncFunction(100).then(result => {
 
 Going back to axios and HTTP, imagine you were tasked with the following:
 
-> You are a web developer and just finished a pet blog for a client, called Dogz and Catz. The blog is connected to a database through an API. Now, your client wants to clasify articles by adding the words "CAT" or "DOG" to the end of article titles. He asks you to work on a function that lets him do this easily to already existing artiles.
+> You are a web developer and just finished an employee directory app for a big client called Gentle Apple. The app is connected to a database through an API. Employees on the database look like [this](https://jsonplaceholder.typicode.com/users). Now, your client calls you saying that they are moving to a new website, so they need the "website" property on all users to be updated to "https://gentleapple.com". 
 
 The statement above gives us a number of requirements to work through:
-1. We need to first retrieve data for a blog article. We would need an `articleId` parameter to do that. (GET)
-2. Using that data, we need to append the word "CAT" or "DOG" to the article title. We'll need a `keyword` parameter. 
+1. We need to first retrieve data for an employee. For our purposes, we'll call employees `users`. We would need an `userId` parameter to do that. (GET)
+2. Using that data, we need to replace the website property for the new `https://gentleapple.com` value. We'll need a `website` parameter. 
 3. We then need to update that data through the API. (PUT)
+
+We will be using [this api](https://jsonplaceholder.typicode.com/) to do this problem.
 
 Let's break this down into steps:
 
@@ -130,55 +132,55 @@ Let's break this down into steps:
 ```
 const axios = require('axios');
 
-const API_URL = 'https://jsonplaceholder.typicode.com/posts/';
+const API_URL = 'https://jsonplaceholder.typicode.com/users/';
 ```
 
 2. Now, let's write our master function that'll call all other functions. For now, it'll only resolve `true`.
 ```
-const updateArticleTitle = () => new Promise((resolve, reject) => {
+const updateUserWebsite = () => new Promise((resolve, reject) => {
     resolve(true);
 });
 ```
 
-3. Let's write a function to retrieve an article's data through a GET request. Keep in mind, we don't know the article's ID yet so we'll need to accept `articleId` as a parameter. Remember we only care about `result.data`, not the entire HTTP result:
+3. Let's write a function to retrieve user data through a GET request. Keep in mind, we don't know the user's ID yet so we'll need to accept `userId` as a parameter. Remember we only care about `result.data`, not the entire HTTP result:
 ```
-const fetchArticleData = (articleId) => new Promise((resolve, reject) => {
-    axios.get(API_URL + articleId).then(result => {
+const fetchUserData = (userId) => new Promise((resolve, reject) => {
+    axios.get(API_URL + userId).then(result => {
         resolve(result.data);
     });
 });
 ``` 
 
-4. Let's write a function for updating article data through a PUT request. We will also need to accept `articleId` here, in addition to the `data` being updated:
+4. Let's write a function for updating user data through a PUT request. We will also need to accept `userId` here, in addition to the `data` being updated:
 ```
-const updateArticleData = (articleId, data) => new Promise((resolve, reject) => {
-    axios.put(API_URL + articleId, { data }).then(result => {
+const updateUserData = (userId, data) => new Promise((resolve, reject) => {
+    axios.put(API_URL + userId, { data }).then(result => {
          resolve(result.data);
     })
 });
 ```
 
-5. Let's now rewrite our master function so that it accepts an `articleId` and `keyword` paramters. Let's also plug in the `fetchArticleData` function. We can update the title by appending `keyword` to `article.title`.
+5. Let's now rewrite our master function so that it accepts an `userId` and `keyword` parameters. Let's also plug in the `fetchUserData` function. We can update the website by replacing `user.website`.
 ```
-const updateArticleTitle = (articleId, keyword) => new Promise((resolve, reject) => {
-    // get article data...
-    fetchArticleData(articleId).then(articleData => {
-        // add keyword to end of title
-        articleData.title = articleData.title + keyword; 
+const updateUserWebsite = (userId, keyword) => new Promise((resolve, reject) => {
+    // get user data...
+    fetchUserData(userId).then(userData => {
+        // replace website
+        userData.website = website; 
     })
 });
 
 ```
 
-6. Now that we're getting data and updating the date property, let's plug in our `updateArticleData` function:
+6. Now that we're getting data and updating the date property, let's plug in our `updateUserData` function:
 ```
-const updateArticleTitle = (articleId, keyword) => new Promise((resolve, reject) => {
-    // get article data...
-    fetchArticleData(articleId).then(articleData => {
+const updateUserWebsite = (userId, keyword) => new Promise((resolve, reject) => {
+    // get user data...
+    fetchUserData(userId).then(userData => {
         // add keyword to end of title
-        articleData.title = articleData.title + keyword; 
-        // update article...
-        updateArticleData(articleId, articleData).then(result => {
+        userData.website = website;
+        // update user...
+        updateUserData(userId, userData).then(result => {
             //finish!
             resolve(result);
         })
@@ -187,9 +189,9 @@ const updateArticleTitle = (articleId, keyword) => new Promise((resolve, reject)
 
 ```
 
-7. Let's execute our master function and see if it works! Remember to pass in an `articleId` and `keyword`.
+7. Let's execute our master function and see if it works! Remember to pass in a `userId` and `website` values.
 ```
-updateArticleTitle(1, "CAT").then(result => {
+updateUserWebsite(5, "https://gentleapple.com").then(result => {
     console.log(result);
 });
 ```
