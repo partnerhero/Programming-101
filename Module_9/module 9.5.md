@@ -57,7 +57,7 @@ The syntax for promises is very simple:
     });
 ```
 
-Say we wanted to convert our bobcat mullet order into a JavaScript Promise. It would look something like this:
+Say we wanted to convert our bobcat mullet order into a JavaScript Promise:
 ```
     const correctAddress = true;
     
