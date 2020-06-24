@@ -47,14 +47,20 @@ module.exports = { fetchUserData, updateUserData };
 Both functions that we just exported will be **required** by the master function, so let's import them on `updateUserWebsite.js` using the **require** keyword:
 
 ```
-const { fetchUserData, updateUserData } = require('./utilities.js')
+const utilities = require('./utilities');
+
+const fetchUserData = utilites.fetchUserData;
+const updateUserData = utilites.updateUserData;
 ```
 Notice how we're adding `./` before the name of the file. This is a relative path, and it indicates that the file is stored on the same folder than our index.js file. 
 
 Let's now throw our `updateUserWebsite` function in there, and that's it! We don't need to declare the helper functions in our file cause they are already being imported.
 
 ```
-const { fetchUserData, updateUserData } = require('./utilities.js')
+const utilities = require('./utilities');
+
+const fetchUserData = utilites.fetchUserData;
+const updateUserData = utilites.updateUserData;
 
 const updateUserWebsite = (userId, website) =>
   new Promise((resolve, reject) => {
