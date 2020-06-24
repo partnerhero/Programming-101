@@ -1,7 +1,5 @@
 ### Exporting/Importing Code
 
-Once we have our code split into files, let's export it. That would make it available for any other files that import it. 
-
 There are two ways to export code:
 1. Default exports - when you need to export only one value/function
 2. Grouped exports - when you need to export multiple values/functions
