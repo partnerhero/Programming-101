@@ -9,7 +9,7 @@ For instance, if you look at the code we wrote on the module 9.5 to update a use
 That's where the principle of **Separation of Concerns** comes handy. This is a design principle for software development, and one of the pillars of clean code, and it basically states that "code should be separated into logical groups that overlap in functionality". 
 
 In Object-oriented programming languages, we call separate files `modules`. That is because all files need to follow one simple rule:
-** A module exports at least one thing. Be it a variable, function, or any other value.**
+**A module exports at least one thing. Be it a variable, function, or any other value.**
 
 One quick way to implement this principle on any project is by following a folder structure composed of two or more modules:
 1. an `index.js` file that only contains the most important block of code, usually a function call.
