@@ -39,9 +39,9 @@ const updateUserData = (userId, data) =>
   });
 ```
 
-To export each function separately, we could just append `export` before declaring each constant:
+To export each function separately, we can add a `module.exports` statement at the end that exports an object containing both functions:
 ```
-export fetchUserData = ....
+module.exports = { fetchUserData, updateUserData };
 ```
 
 #### Grouped exports - importing
@@ -83,12 +83,12 @@ Default exports are useful when there's only one piece of functionality we care 
 
 To export our function, we could either append a default export statement at the end of the file:
 ```
-export default updateUserWebsite;
+module.exports = updateUserWebsite;
 ```
 
 Or, a cleaner way would be to append the default export statement to the function's declaration:
 ```
-export default (userId, website) =>
+module.exports = (userId, website) =>
   new Promise((resolve, reject) => {
     // get article data...
     fetchUserData(userId).then((userData) => {
@@ -109,12 +109,12 @@ Noticed how we're not naming the function anymore. This is because the name is i
 
 We need the `fetchUserData` function on `index.js`, so we can import it by doing:
 ```
-const fetchUserData = require('./fetchUserData');
+const updateUserWebsite = require('./updateUserWebsite');
 ```
 
 Now, we could call our function the same way as if it was declared on our index.js file:
 ```
-fetchUserData('5').then(result => console.log(result));
+updateUserWebsite('5').then(result => console.log(result));
 ```
 
 There we go! Now we have a super clean `index.js` file that imports a master function from `updateUserWebsite.js`. The master function in turn imports two helper functions from `utilities.js`. 
