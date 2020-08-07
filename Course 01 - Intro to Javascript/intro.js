@@ -17,6 +17,8 @@
     This file will cover environment setup, and how to execute JavaScript files on your computer.
     
 
+
+    
     SETUP
     We'll start by downloading the NodeJS binaries from https://nodejs.org/en/ and installing
     them on your computer. Once the binaries have been installed, you should be able to open the terminal (or command
@@ -42,7 +44,7 @@
 
 */
 
-console.log(" HELLO WORLD :) ");
+console.log(' HELLO WORLD :) ');
 
 /*
 
