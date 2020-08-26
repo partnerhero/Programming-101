@@ -1,4 +1,48 @@
-/* GitHub Notes
+/*
+Course 13!
+
+Version Control:
+-Version Control software is software that allows users to make small revisions to a large-scale project over time. 
+-Each of these revisions (or “versions”/“builds”) constitutes a new software update. 
+-A project can be reverted to previous versions as needed. This allows common version concepts such as “alpha builds” and test environments.
+-Version Control software also allows multiple people to work on various aspects of a codebase simultaneously without overwriting each other.
+
+We will be discussing GitHub, one of the most popular pieces of Version Control software. GitHub integrates with a lot of systems, making it a go-to for larger projects. (GitHub is used for several internal PH projects.)
+
+GitHub Intro:
+Each overarching project in GitHub is encapsulated in what is called a repository, or “repo” for short. For instance, PH’s Beacon has a backend repo and a frontend repo. Programming 101 has its own repo that we will use for the purposes of this course.
+
+Branches:
+
+GitHub handles versions by way of using “branches”. A branch essentially is a unique set of code changes with a unique name. Each repository can have one or more branches. There is a main branch (called the “master” branch and usually representative of the most up-to-date production code) from which branches can deviate. A typical code update, from inception to production, works as follows:
+
+Branches are set up: master branch -> staging branch -> [feature branch 1, feature branch 2, ...., bugfix branch 1, bugfix branch 2, …]
+
+A branch’s lifecycle:
+1. A new branch is created locally based off of the most up-to-date version of staging or master (we will use master for this course).
+2. A new branch is created remotely so that these changes can be checked out and viewed by other people on the project without interrupting work on the local branch. These local and remote iterations are linked.
+3. Work is done on the local branch.
+4. Once work on the local branch is completed, these changes are pushed to the remote branch on the server so that they can be viewed by others in the repo.
+5. Once the code changes are approved, this remote branch is merged back into the staging branch.
+6. Once significant updates have been merged to the staging branch, the latest version of this branch is tested and merged into the master branch.
+7. The master branch is then pushed to production.
+
+Pull Requests (“PRs”):
+Version Control makes it easy to verify code changes within a controlled environment. Recall in step 4 above, changes were pushed to our remote branch so that they can be reviewed. Practically, this review process occurs in GitHub through what we call a Pull Request, or “PR”. 
+
+PRs allow us to:
+-Merge our changes into an existing branch (generally the staging branch, but not always).
+-View a snapshot of the code changes.
+-Give feedback on the code and request changes/updates.
+-Quickly approve and merge code.
+
+We will see an example of a PR as we move forward.
+
+*/
+
+//--------------------------------------------------------------------
+
+/* Cloning and working on a repo
 
 1. Log in to Github and click on the repository you wish to clone
 
@@ -72,6 +116,36 @@ Side note: let's talk about stashing changes
             removes all stashes
 */
 
+//----------------------------------------------------------------------
+
+/* Creating your own new repo and connecting it to github
+
+1. Navigate to a local project folder from your command prompt that you want to make into a github repo
+
+2. git init
+    -initializes the git process and creates a brand new repo
+
+3. git add .
+    -adds all files to a staging area ready to be commited
+
+4. git commit -m "<notes>"
+    -commits the changes
+
+5. Log in to your github account and click on new repository and create repository
+
+6. You should see some instructions there on how to proceed
+
+7. git remote add origin https://github.com/username/new_repo
+
+8. git push -u origin master
+    -this pushes your local repo to your github account
+
+9. Check your github account and see that your work has been pushed to github!
+
+*/
+
+//----------------------------------------------------------------------
+
 /*
 GitHub Homework
 
@@ -93,5 +167,6 @@ GitHub Homework
 12. Go to the PH Programming-101 repo and create a Pull Request for your remote branch
 13. Request Daniel (blumdani) and Josh (joshua-alex) as Reviewers on your PR and submit it
 
-We will both be notified of this and then will check your work.
+We will both be notified of this and will check your work.
+
 */
