@@ -4,7 +4,17 @@
 */
 
 const initializeLot = require('./initializeLot');
-const { openProgram } = require('./openProgram');
+const openProgram = require('./openProgram');
 
-initializeLot();
-openProgram();
+const init = async () => {
+    //we bind the init function to itself to make it callable
+    //and assign it to a constant
+    const functionRestart = init.bind(init);
+
+    initializeLot();
+
+    const restart = await openProgram();
+    if (restart) functionRestart();
+};
+
+init();

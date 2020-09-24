@@ -24,22 +24,24 @@ const addQuestions = [
 
 //Main logic of adding a car to the lot.
 //Also generates unique carID: (first letter of make and model plus year)
-module.exports = newCar => {
+module.exports = async (newCar) => {
     console.clear();
     console.log(chalk.blue.bold("Alright, let's add a car:\n\n"));
-    inquirer.prompt(addQuestions).then(answers => {
-        carID =
-            answers.addMake.charAt(0) +
-            answers.addModel.charAt(0) +
-            answers.addYear;
-        newCar.push('/carArray[]', {
-            id: carID,
-            make: answers.addMake,
-            model: answers.addModel,
-            year: Number(answers.addYear),
-            price: Number(answers.addPrice),
-        });
-        console.log(chalk.blue('\nYour car has been added!\n'));
-        exitPrompt();
+
+    const answers = await inquirer.prompt(addQuestions);
+
+    const carID =
+        answers.addMake.charAt(0) +
+        answers.addModel.charAt(0) +
+        answers.addYear;
+
+    newCar.push('/carArray[]', {
+        id: carID,
+        make: answers.addMake,
+        model: answers.addModel,
+        year: Number(answers.addYear),
+        price: Number(answers.addPrice),
     });
+    console.log(chalk.blue('\nYour car has been added!\n'));
+    return;
 };

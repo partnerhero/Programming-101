@@ -5,7 +5,7 @@ const fs = require('fs');
 
 //Set up db if it does not exist, or declare it if it does.
 module.exports = () => {
-    if (fs.existsSync('/carLot.json') == false) {
+    if (!fs.existsSync('/carLot.json')) {
         db = new JsonDB(new Config('carLot', true, true, '/'));
         db.push(
             '/carArray[0]',
