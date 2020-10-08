@@ -27,13 +27,6 @@
             "model": "Dart",
             "year": 2017,
             "cost": 15000
-        },
-        {
-            "id": "jhg",
-            "make": "j",
-            "model": "h",
-            "year": null,
-            "price": null
         }
     ]
 }
