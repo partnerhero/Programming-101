@@ -3,14 +3,18 @@
     -<3 Daniel Blumberg + Jawman <3
 */
 
-const { initializeLot } = require("./initializeLot");
-const { openProgram } = require("./openProgram");
+const initializeLot = require('./initializeLot');
+const { openProgram } = require('./openProgram');
 
-//Calling our initialize function to set up database, then calling our main prompt.
-const mainFunction = () => {
-  initializeLot().then((result) => {
+initializeLot().then(result => {
     openProgram();
-  });
-};
+});
 
-mainFunction();
+// Calling our initialize function to set up database, then calling our main prompt.
+// const mainFunction = () => {
+//     initializeLot().then(result => {
+//         openProgram();
+//     });
+// };
+
+// mainFunction();
