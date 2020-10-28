@@ -1,7 +1,7 @@
 const chalk = require('chalk');
 const inquirer = require('inquirer');
 
-// List of questions for removing a car prompt.
+// List of questions for removing a car.
 const removeQuestions = [
     {
         name: 'carID',
@@ -15,10 +15,10 @@ module.exports = soldCar =>
     new Promise((resolve, reject) => {
         console.clear();
         inquirer.prompt(removeQuestions).then(answers => {
-            let carIndex = soldCar.getIndex(
+            // Check package literature for getIndex syntax
+            const carIndex = soldCar.getIndex(
                 '/carArray',
-                Number(answers.carID),
-                'id'
+                Number(answers.carID)
             );
             // If this value exists, delete it.
             if (carIndex != -1) {

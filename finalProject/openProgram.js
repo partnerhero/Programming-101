@@ -1,11 +1,11 @@
-const listDB = require('./listDB');
-const addCar = require('./addCar');
-const removeCar = require('./removeCar');
 const chalk = require('chalk');
 const figlet = require('figlet');
 const inquirer = require('inquirer');
+const listDB = require('./listDB');
+const addCar = require('./addCar');
+const removeCar = require('./removeCar');
 
-//List of questions for main inquirer prompt.
+// List of questions for main inquirer prompt.
 const introQuestions = [
     {
         name: 'Intro',
@@ -15,7 +15,7 @@ const introQuestions = [
             'List cars currently in the lot',
             'Add a car to the lot',
             'Remove a car from the lot',
-            'Exit program',
+            'Exit tool',
         ],
     },
 ];
@@ -45,7 +45,7 @@ const openProgram = () => {
                     console.log(error);
                     exitPrompt();
                 });
-        } else if (answers.Intro === 'Exit program') {
+        } else if (answers.Intro === 'Exit tool') {
             console.log(
                 chalk.blue.italic(
                     '\nThank you for using our management tool, have a great day!\n\n'
