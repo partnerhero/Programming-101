@@ -1,5 +1,25 @@
 // Course 3
 
+/*
+
+POSSIBLY ENVIRONMENT SETUP INSTEAD OF REVIEW
+    SETUP
+    We'll start by downloading the NodeJS binaries from https://nodejs.org/en/ and installing
+    them on your computer. Once the binaries have been installed, you should be able to open the terminal (or command
+    prompt on Windows), run the 'node -v' command, and see an output indicating the Node version that was installed.
+
+    After installing Node, let's create a folder to store the files we will be working with. 
+    To do this, write 'mkdir node-workshop' and then 'cd node-workshop'. The mkdir commant 'makes' a directory and
+    the cd command 'changes directory', or moves you into it.
+
+    Once you are in the node-workshop directory, run the following command: 'node intro.js' and you should see an 
+    output in your terminal.
+    
+    Congrats! You just ran your first JavaScript file. We will be using the 'node' command to execute the files
+    we will write throughout this workshop.
+
+*/
+
 // 1. Write a variable that contains your name. Write another variable that contains your date of birth. Print those variables to the console.
 
 const myName = 'Josh';
