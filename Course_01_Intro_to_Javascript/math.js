@@ -1,24 +1,24 @@
-// Basic mathematical operations
+// Basic mathematical operations can be done in Javascript using mathematical operators
 
-// SUM
+// ADDICTION
 // Operator: +
 const sum = 5 + 5;
 console.log(sum);
 
-// SUBTRACT
+// SUBTRACTION
 // Operator: -
-const subtract = 5 - 5;
-console.log(subtract);
+const difference = 5 - 5;
+console.log(difference);
 
-//DIVIDE
-//Operator: /
-const divide = 5 / 5;
-console.log(divide);
+// DIVISION
+// Operator: /
+const quotient = 5 / 5;
+console.log(quotient);
 
-//MULTIPLY
-//Operator: *
-const multiply = 5 * 5;
-console.log(multiply);
+// MULTIPLICATION
+// Operator: *
+const product = 5 * 5;
+console.log(product);
 
 /* 
     Chaining Operations

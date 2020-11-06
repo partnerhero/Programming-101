@@ -97,5 +97,5 @@ console.log(8);
 console.log('My name is ' + 'not the same' + ' as my other name?!');
 
 // TO DO:
-// Add a console.log() that concatenates two strings. Your first string is "My IKEA furniture name is: " and you second string should be your first name spelled backwards.
+// Add a console.log() that concatenates two strings. Your first string is "My IKEA furniture name is: " and your second string should be your first name spelled backwards.
 console.log('My IKEA furniture name is: ' + 'Auhsoj');
