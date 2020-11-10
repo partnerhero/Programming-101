@@ -53,11 +53,6 @@ console.log('My Name!');
 
     - Strings
     - Numbers
-    - Boolean
-    - Arrays
-    - Objects
-
-    This course will cover the first two values.
 
     STRINGS
     In JavaScript, strings are used to represent text. They are surrounded by quotes (double(") or single('), and can be any combination of text or numbers.
@@ -86,6 +81,9 @@ console.log('gold');
 console.log(8);
 
 // Run to see your results!
+
+// TALK ABOUT
+// console.log() difference between number string and real numbers
 
 /*
     STRING CONCATENATION
