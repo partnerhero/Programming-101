@@ -29,7 +29,7 @@ var myName = 'Nathaniel';
 var placeOfBirth = 'Somewhere in the multi-verse';
 var petName = 'Dawg The Bownteyhuntuh';
 
-// You can log these to the console as well:
+// You can log these to the console as well, this time WITHOUT quotes since these are variables:
 console.log(myName);
 
 // TO DO: Add declarations for your name, place of birth, and your pet's name, then log one of them to the console.
@@ -48,9 +48,9 @@ wheelsOnABike = 4;
 console.log(wheelsOnABike);
 
 // Notice the difference in the console between the two variables.
+// You can also reassign values declared with var.
 
-// TO DO: Add let declarations for 'wings on a plane' and 'states in the US'.
-let wingsOnAPlane = 2;
+// TO DO: Create a let declaration for 'states in the US'.
 let statesInTheUS = 50;
 console.log(statesInTheUS);
 

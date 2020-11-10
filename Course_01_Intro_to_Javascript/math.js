@@ -26,6 +26,8 @@ console.log(product);
     Mathematical operations can be chained through parentheses, as you would
     in a calculator!
 
+    PEMDOS
+
 */
 
 const chainedOperation = (5 * 5) / 5;
