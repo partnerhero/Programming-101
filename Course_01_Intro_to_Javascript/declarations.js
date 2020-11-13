@@ -8,18 +8,18 @@
 
 JavaScript applications consist of declarations. Declarations are a way to assign a value to a word, also called a variable.
 
-All declarations should be followed by semicolons. This tells the Node runtime that is the ending of the declaration.
+All declarations should be followed by semicolons. This tells the runtime that is the ending of the declaration. It's also best practice to add semi-colons after each line of finished code, like our console.logs.
 
-BEST PRACTICE
+CAMELCASE
 Declarations should always be done in camelcase. That means, if you need your variable name to have more than one word, all words after the first should start with a capital letter.
 
-For example,
+Example:
 
 firstName instead of firstname
 
-testVariable instead of testvariable
+anotherVariableName instead of anothervariable name
 
-anotherOneBitesTheDust instead of anotheronebitesthedust
+This makes it easier for human readability.
 
 */
 
@@ -32,30 +32,39 @@ var petName = 'Dawg The Bownteyhuntuh';
 // You can log these to the console as well, this time WITHOUT quotes since these are variables:
 console.log(myName);
 
-// TO DO: Add declarations for your name, place of birth, and your pet's name, then log one of them to the console.
-// myName
-// placeOfBirth
-// petName
+/*
+    TO DO: Add declarations for your name, place of birth, and your pet's name, then log one of them to the console.
+    myName
+    placeOfBirth
+    petName
+*/
 
-// Up until 2015, var was the only way to declare variables in Javascript. After an update and new version, called ES6, we have two other ways of doing this depending on the situation. LET's go over LET! hahahahahahahhhahaaa11!!11
-let wheelsOnACar = 4;
+// Up until 2015, var was the only way to declare variables in Javascript. After an update and new version, called ES6, we have two other ways of doing this depending on the situation. LET's go over LET! hahahahahahahhhahaaa!!1!!1one1
+let myAge = 32;
 let wheelsOnABike = 2;
 console.log(wheelsOnABike);
 
-// To redeclare a variable and reassign its value, drop the word let.
-// You add training wheels to the bike, how many wheels does it have now?
+// To reassign a variable's value, drop the word let.
+
+// Example: You add training wheels to the bike, how many wheels does it have now?
 wheelsOnABike = 4;
 console.log(wheelsOnABike);
 
 // Notice the difference in the console between the two variables.
-// You can also reassign values declared with var.
+// You can also reassign values declared with var in the same way.
 
-// TO DO: Create a let declaration for 'states in the US'.
+/*
+    TO DO:
+    1. Create a let declaration for 'states in the US'.
+
+    Then let's say Alaska decides to become its own country and leaves the United States.
+
+    2. Reassign your variable statesInTheUS to represent the new number of states in the US.
+*/
+
 let statesInTheUS = 50;
 console.log(statesInTheUS);
 
-// Let's say Alaska decides to become its own country and leaves the United States.
-// Redclare statesInTheUS to represent the new number of states in the US.
 statesInTheUS = 49;
 console.log(statesInTheUS);
 
@@ -67,21 +76,29 @@ console.log(statesInTheUS);
     
     BEST PRACTICE
     Generally, all declarations should be done with const UNLESS a variable is expected to change.
-
 */
 
 // Examples:
-const userName = 'prisonsentence2000';
-const userRegion = 'G/7';
-console.log(userRegion);
+const birthDate = 'January 24';
+const birthPlace = 'California';
+console.log(birthPlace);
 
-// If I try to redeclare one of these variables, I get an error:
-userRegion = 88;
+// If I try to reassign one of these variables, I get an error:
+birthPlace = 88;
 
-// TO DO: Add const declarations for "my favorite band" and "my third favorite number" and log them to the console.
-const myFavoriteBand = 'Dimmu Borgir';
+/*
+    TO DO:
+    1. Add const declarations for your favorite color and your third favorite number.
+    2. Log them to the console.
+
+*/
+const myFavoriteColor = 'purple';
 const myThirdFavoriteNumber = 664;
 
-// Remember to only pass the variable name to the console.log() method, no the entire declaration
+// Remember to only pass the variable name to console.log(), not the entire declaration
 console.log(myFavoriteBand);
 console.log(myThirdFavoriteNumber);
+
+//------------------------------------------------
+
+// Proceed to math.js file
