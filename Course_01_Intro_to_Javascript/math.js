@@ -1,37 +1,50 @@
 // Basic mathematical operations can be done in Javascript using mathematical operators
 
-// ADDICTION
-// Operator: +
+// CODE ALONG! :)
+
+// ADDITION
+// Operator: + (plus sign)
 const sum = 5 + 5;
 console.log(sum);
 
 // SUBTRACTION
-// Operator: -
+// Operator: - (minus sign)
 const difference = 5 - 5;
 console.log(difference);
 
 // DIVISION
-// Operator: /
+// Operator: / (forward slash)
 const quotient = 5 / 5;
 console.log(quotient);
 
 // MULTIPLICATION
-// Operator: *
+// Operator: * (asterisk or star)
 const product = 5 * 5;
 console.log(product);
 
 /* 
     Chaining Operations
 
-    Mathematical operations can be chained through parentheses, as you would
-    in a calculator!
+    Mathematical operations can be chained using parentheses just like in a calculator!
 
-    PEMDOS
+    Order of operations:
+    PEMDAS
 
 */
-
 const chainedOperation = (5 * 5) / 5;
+console.log(chainedOperation);
 
-// TO DO: declare a constant with the value of a chained operation that performs a sum, a division, and a multiplication, then log it to the console
+/*
+    TO DO:
+    1. Declare a constant with the value of a chained operation that includes addition, division, and multiplication.
+    2. Log your vairable to the console.
 
-const anothaOne = (5 * 3) / (9 + 1);
+*/
+const myChainedOperation = (5 * 3) / (9 + 1);
+console.log(myChainedOperation);
+
+// End of course
+
+//------------------------------------------------------------
+
+// Homework Announcement (homework will be posted in the channel on Mondays)
