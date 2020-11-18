@@ -1,3 +1,7 @@
+/* IDEAS TO ADD TO THIS EXERCISE
+typeof?
+*/
+
 /*
 Functions
 A function houses a block of code that performs a task when called. Writing a function allows for this task to be called, or invoked, multiple times without needing to rewrite the code.
