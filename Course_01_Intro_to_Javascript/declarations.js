@@ -54,12 +54,17 @@ console.log(wheelsOnABike);
 // You can also reassign values declared with var in the same way.
 
 /*
+    Talk about the difference between declaring and assigning.
+*/
+
+/*
     TO DO:
-    1. Create a let declaration for 'states in the US'.
+    1. Create a let declaration for the number of states in the US.
 
     Then let's say Alaska decides to become its own country and leaves the United States.
 
     2. Reassign your variable statesInTheUS to represent the new number of states in the US.
+    
 */
 
 let statesInTheUS = 50;
@@ -96,7 +101,7 @@ const myFavoriteColor = 'purple';
 const myThirdFavoriteNumber = 664;
 
 // Remember to only pass the variable name to console.log(), not the entire declaration
-console.log(myFavoriteBand);
+console.log(myFavoriteColor);
 console.log(myThirdFavoriteNumber);
 
 //------------------------------------------------

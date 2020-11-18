@@ -36,12 +36,11 @@ console.log('My Name!');
     Comments are wrapped in /*'s, or preceeded by double slashes //.
 
     TO DO:
-    Add a comment after your console.log with any random word in it. Remember to preceed it by //'s
-    Once done, run this file again and see if you comment is logged to the terminal.
+    Add a comment under your console.log that briefly summarizes what you did and run it again.
 */
 
 console.log('My Name!');
-// Moon boots
+// Logged my name to the console
 
 /* 
     TYPES OF VALUES
