@@ -346,3 +346,105 @@ colors.forEach(color => {
 })
 
 */
+
+//--------------------------------------------------------------------
+// MIXED UP NOTES:
+/*
+ARRAYS
+Arrays organize and store data in lists using the [] bracket symbols. Each item of data in an array is called an element, and any data type can be stored in arrays: strings, numbers, booleans. The data is ordered, and each element has an index that denotes its position within the array.
+*/
+
+// Example, we save arrays to variables like this:
+const groceryList = ['Toilet Paper', 'Eggs', 'Bread'];
+console.log(groceryList);
+// Each element's position within the array is called its index, and it starts at 0. So, Toilet Paper's index is 0, eggs is 1, and bread is 2.
+
+// groceryList is an array with 3 elements. To access an individual element requires bracket notation:
+console.log(groceryList[2]); // output will be Bread
+
+// What will we see with this?
+console.log(groceryList[1]); // output will be Eggs
+
+// Even though groceryList is declared with a const, the array is mutable, meaning we can mutate the elements if we like. We still cannot reassign the groceryList array though, we can only reassign elements when declaring with const. Let's say we have enough eggs from the last time we shopped, we can change the Eggs element to something else:
+groceryList[1] = 'Milk';
+console.log(groceryList);
+
+// QUICK TASK 1:
+// Create an array of three hobbies
+const myHobbies = ['video games', 'sleeping', 'eating'];
+
+// Log the first element of your array to the console
+console.log(myHobbies[0]);
+
+// Change the last element of your array to SOMETHING
+myHobbies[2] = 'SOMETHING';
+
+// There are certain properties and methods that can be used in javascript, and I encourage you to look through some of the resources out there to discover what they can do. Here's one very useful example, the length property.
+// We'll be talking a lot about these proper ties and methods in the next course
+
+// This returns the length of an array:
+console.log(myHobbies.length);
+// Go ahead and try it with your hobbies array
+
+// ARRAYS TASK 2:
+// The length property can be useful for iterating through array indexes.
+// Given this fruits array, use a for loop to log each item in the array to the console. (Hint: Remember that array indexes start at 0)
+const fruits = ['apple', 'peach', 'grape', 'elderberry'];
+
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+// HOMEWORK
+// When would you want to use a global variable? When not?
+
+// Functions HW Problem 1
+// Write a function where you input the day of the week as an argument and it tells you whether to take the trash out or not on that day.
+const takeOutTrash = day => {
+    if (day === 'Thursday') {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+console.log(takeOutTrash('Tuesday')); // output is false
+console.log(takeOutTrash('Thursday')); // output is true
+
+// Functions HW Problem 2
+// Using a function and a for loop, console.log the area of squares with lengths 1 through 10 incrementing by one.
+// Hint: remember area of a square = length * length
+const areaOfSquare = length => {
+    return length * length;
+};
+
+for (let i = 1; i <= 10; i++) {
+    console.log(areaOfSquare(i));
+}
+
+// Arrays HW Problem 1
+// Write a list of your four favorite film stars and log each to the console using a for loop.
+const starNames = [
+    'Cathryn Blanchett',
+    'Robert Downey Sr',
+    'Zach Galifanakiszcsz',
+    'Cassandra Bullock',
+];
+
+for (let i = 0; i < starNames.length; i++) {
+    console.log(starNames[i]);
+}
+
+// Bonus Challenge Question!
+// Given these two arrays, write a program that compares the numbers between the arrays and logs to the console any numbers that are in both arrays. (HINT: Nested for loops can be useful)
+
+const myArray = [6, 20, 19, 17];
+const yourArray = [20, 17, 23, 5];
+
+for (let i = 0; i < myArray.length; i++) {
+    for (let j = 0; j < yourArray.length; j++) {
+        if (myArray[i] === yourArray[j]) {
+            console.log('Both arrays have the number: ' + yourArray[j]);
+        }
+    }
+}
