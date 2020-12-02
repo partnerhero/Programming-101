@@ -2,9 +2,6 @@
     Course 3 - Functions!
 
     Josh's intro:
-    Today's lesson once again covers a concept that really takes advantage of computers and turns it into convenience
-
-    Today's concept once again takes advantage of computing powers 
 
     Today we're talking a concept that makes doing the same thing over and over again really convenient. So if you've ever set up your favorite radio stations in your car, if you've ever written a formula in excel and dragged it down a column, or even customized your email inbox, then you're familiar with this concept. Creating something to make a task easier for you in the future. Keep that in mind today as we talk about functions.
 */
