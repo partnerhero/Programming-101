@@ -1,12 +1,5 @@
 /*
     Course 3 - Functions!
-
-    Josh's intro:
-
-    Today we're talking a concept that makes doing the same thing over and over again really convenient. So if you've ever set up your favorite radio stations in your car, if you've ever written a formula in excel and dragged it down a column, or even customized your email inbox, then you're familiar with this concept. Creating something to make a task easier for you in the future. Keep that in mind today as we talk about functions.
-
-
-
 */
 
 /*
@@ -212,7 +205,7 @@ console.log(takeOutTrash('Thursday'));
 
     TASK 3
   
-    A local bank is running a promotion! Customers who have $500 in their account will automatically receive a $20 bonus. Write a function that takes a name and a balance, then returns a message displaying the name whether or not they received the bonus based on the above conditions. Call your function and wrap it in a console.log() when you finish.
+    A local bank is running a promotion! Customers who have $500 or more in their account will automatically receive a $20 bonus. Write a function that takes a name and a balance, then returns a message displaying the name whether or not they received the bonus based on the above conditions. Call your function and wrap it in a console.log() when you finish.
         HINT:
             1. name and balance should be parameters
             2. use an if-else statment to check conditions
