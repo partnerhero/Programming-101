@@ -151,7 +151,7 @@ do {
 } while (cashBalance < costOfTV);
 
 // TASK 3:
-// You're making Chicken Biryani, which needs 5 cups of rice. Given this variable, write a do-while loop that increases the value of cupsAdded by 1 for each loop, while cupsAdded is less than 5.
+// You're making Chicken Biryani, which needs 5 cups of rice. Given the cupsAdded variable, write a do-while loop that increases the value of cupsAdded by 1 for each loop, while cupsAdded is less than 5.
 // Give them this variable
 let cupsAdded = 0; // starting with 0 cups
 
@@ -161,5 +161,22 @@ do {
 } while (cupsAdded < 5);
 // keep adding cups until condition is met
 console.log(cupsAdded);
+
+//------------------------------------------------------------------
+
+// EXTRA EXAMPLE:
+// Follow Along Example:
+// We can even use a for loop to call a function
+
+const factorial = number => {
+    if (number === 1 || number === 0) {
+        return 1;
+    } else {
+        return number * factorial(number - 1);
+    }
+};
+for (let i = 1; i <= 10; i++) {
+    console.log(factorial(i));
+}
 
 //------------------------------------------------------------------
