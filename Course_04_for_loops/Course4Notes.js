@@ -14,6 +14,7 @@
 		return something;
 	}
 */
+
 // Answer:
 const add = (n1, n2) => {
     return n1 + n2;
@@ -83,13 +84,8 @@ for (let index = 0; index > -5; index--) {
     console.log(index);
 }
 
-// can loop backwards
-for (let counter = 3; counter > -1; counter--) {
-    console.log(counter);
-}
-
 // TASK 1:
-// Create a for loop that iterates from 4 through 15 by 1, and logs the iterator variable to the console each time.
+// Create a for loop that iterates from 1 through 5 by 1, and logs the iterator variable to the console each time.
 for (let i = 4; i <= 15; i++) {
     console.log(i);
 }
@@ -104,17 +100,23 @@ for (let counter = 1; counter <= 100; counter++) {
 }
 
 // TASK 2:
-// This may require a walkthrough.. I tried to make it straightforward but it might be pretty complex for the students.
-
 /*	
 For Loop
-	You're writing a for loop to keep track of the total sales for your company over the course of a week. You're projected to bring in 1 sale on your first day, and then each day after that your sales will increase by one.
+	Write a for loop to keep track of the total sales for your company over a week. You bring in 1 sale on your first day, and then your sales will increase by 1 more each day after that.
+
+	DISCLAIMER: This may look complicated, but if you follow each individual step, you should get to the solution :)
+
 		1. Create global variable totalSales and set it equal to 0
+
 		2. Create a for loop with dailySales as your iterator variable starting at 1
+		
 		3. Your loop should run while dailySales is less than or equal to 7
+		
 		4. dailySales should increment by 1
+		
 		5. In your block of code, use an increment operator to reassign totalSales and have dailySales added to it 
-		6. Log totalSales to the console
+		
+		6. Below your for loop, log totalSales to the console
 */
 let totalSales = 0;
 
@@ -149,16 +151,14 @@ do {
 } while (cashBalance < costOfTV);
 
 // TASK 3:
-
-// You're making Chicken Biryani for a lot of people, which calls for 5 cups of rice. Given these variables, write a do-while loop that increases the value of cupsAdded by 1 for each loop, while cupsAdded is less than cupsNeeded.
-
-// Answer:
-let cupsNeeded = 5; // need 5 total cups
+// You're making Chicken Biryani, which needs 5 cups of rice. Given this variable, write a do-while loop that increases the value of cupsAdded by 1 for each loop, while cupsAdded is less than 5.
+// Give them this variable
 let cupsAdded = 0; // starting with 0 cups
 
+// Answer:
 do {
     cupsAdded++;
-} while (cupsAdded < cupsNeeded);
+} while (cupsAdded < 5);
 // keep adding cups until condition is met
 console.log(cupsAdded);
 
