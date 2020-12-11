@@ -1,17 +1,18 @@
 /*
-	Loops!
+	https://repl.it/languages/nodejs
 
-	Quick Intro
-*/
-
-/*
 	Review TASK:
 
 	Follow these steps to write a function.
 	1. Create a function with 2 parameters.
 	2. Write a return statement that adds the 2 parameters together
-	2. Call the function inside a console.log() and pass any 2 numbers in as argumentns.
-	3. Run the program!
+	3. Call the function inside a console.log() and pass any 2 numbers in as argumentns.
+	4. Run the program!
+
+	Syntax:
+	const functionName = (parameter1, parameter2) => {
+		return something;
+	}
 */
 // Answer:
 const add = (n1, n2) => {
@@ -20,13 +21,21 @@ const add = (n1, n2) => {
 console.log(add);
 
 /*
+	Loops!
+
+	Quick Intro
+*/
+
+/*
+	Increment Operators!
+
 	We need to talk about increment operators before we get into loops
 */
 let num = 1;
-num = 2; // reassigns number
+num = 2; // reassigns num
 console.log(num); // output: 2
 
-num = num + 1; // reassigns number and adds 1
+num = num + 1; // reassigns num and adds 1
 console.log(num); // output: 3
 // This is the same as:
 num += 1;
@@ -46,8 +55,7 @@ console.log(int); // output: 2
 -------------------------------------------------------------------
 	FOR LOOPS
 
-	A For loop takes a range of values, and performs a set of instructions
-	based on the parameters set by those values.
+	A For loop takes a range of values, and performs a set of instructions based on the parameters set by those values. For loops are a form of iteration.
 
 	Basically, we tell the loop how to start, under what conditions it stops, and how it runs
 
