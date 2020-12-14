@@ -1,4 +1,12 @@
 /*
+	HOMEWORK!
+
+	1. Use the increment operator += to add 2 to the myNumber variable then log it to the console:
+		let myNumber = 5;
+
+*/
+
+/*
 	HOMEWORK PROBLEMS
 
 // From Eloquent Javascript:

@@ -79,14 +79,14 @@ for (let i = 0; i < 20; i += 2) {
     console.log(i);
 }
 
-// can be negative
+// can be negative (decrement)
 for (let index = 0; index > -5; index--) {
     console.log(index);
 }
 
 // TASK 1:
 // Create a for loop that iterates from 1 through 5 by 1, and logs the iterator variable to the console each time.
-for (let i = 4; i <= 15; i++) {
+for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
 
@@ -143,10 +143,10 @@ console.log(totalSales);
 // EXAMPLE 1:
 // We want to buy a TV that costs 100 dollars. Right now we have 10 dollars in cash, but we get 5 dollars more every week. Let's write a while loop that that logs to the console our running total and stops when we have enough to buy the TV.
 let cashBalance = 10;
-let dailyCash = 5;
+let weeklyCash = 5;
 const costOfTV = 100;
 do {
-    cashBalance += dailyCash;
+    cashBalance += weeklyCash;
     console.log(cashBalance);
 } while (cashBalance < costOfTV);
 
@@ -167,6 +167,7 @@ console.log(cupsAdded);
 // EXTRA EXAMPLE:
 // Follow Along Example:
 // We can even use a for loop to call a function
+// Write a for loop that calls a function to return the factorials of odd numbers from 1 to 9.
 
 const factorial = number => {
     if (number === 1 || number === 0) {
@@ -175,7 +176,7 @@ const factorial = number => {
         return number * factorial(number - 1);
     }
 };
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 9; i += 2) {
     console.log(factorial(i));
 }
 
