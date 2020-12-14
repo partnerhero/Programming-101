@@ -10,6 +10,12 @@ const greeting = () => {
 };
 console.log();
 
+Answer:
+const greeting = () => {
+    return 'Hey there! :)';
+};
+console.log(greeting());
+
 2. Write a function with no parameters that returns any string. Call the function inside a console.log() and then run it.
 
 3. Write a function with one parameter that multiplies that parameter by 2. Call the function inside a console.log() and pass in the number 5 as an argument then run it.
