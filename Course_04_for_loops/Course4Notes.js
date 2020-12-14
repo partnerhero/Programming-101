@@ -166,7 +166,6 @@ console.log(cupsAdded);
 
 // EXTRA EXAMPLE:
 // Follow Along Example:
-// We can even use a for loop to call a function
 // Write a for loop that calls a function to return the factorials of odd numbers from 1 to 9.
 
 const factorial = number => {
