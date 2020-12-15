@@ -86,7 +86,7 @@ for (let index = 0; index > -5; index--) {
 
 // TASK 1:
 // Create a for loop that iterates from 1 through 5 by 1, and logs the iterator variable to the console each time.
-for (let i = 4; i <= 15; i++) {
+for (let i = 1; i <= 5; i++) {
     console.log(i);
 }
 
