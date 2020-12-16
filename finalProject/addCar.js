@@ -22,7 +22,7 @@ const addQuestions = [
 ];
 
 // Main logic of adding a car to the lot.
-// Also generates unique carID: (first letter of make and model plus year)
+// Also generates unique carID:
 module.exports = db =>
     new Promise((resolve, reject) => {
         console.clear();
