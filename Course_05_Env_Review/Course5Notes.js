@@ -1,4 +1,6 @@
-// Course 3
+// Course 5 - Environment and Review
+
+// Consider showing off final project in latter half of this course
 
 /*
 

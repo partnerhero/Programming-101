@@ -1,9 +1,9 @@
-const chalk = require('chalk');
-const figlet = require('figlet');
-const inquirer = require('inquirer');
 const listDB = require('./listDB');
 const addCar = require('./addCar');
 const removeCar = require('./removeCar');
+const chalk = require('chalk');
+const figlet = require('figlet');
+const inquirer = require('inquirer');
 
 // List of questions for main inquirer prompt.
 const introQuestions = [
@@ -15,7 +15,7 @@ const introQuestions = [
             'List cars currently in the lot',
             'Add a car to the lot',
             'Remove a car from the lot',
-            'Exit tool',
+            'Exit program',
         ],
     },
 ];
