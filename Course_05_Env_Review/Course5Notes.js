@@ -59,9 +59,13 @@
     Open integrated terminal in VSCode
     node index.js to run the file
 
-    You ran your first file! We will be using the node command from now on
+    You ran your first file!
 
-    THIS IS A GOOD PLACE TO TALK A LITTLE BIT ABOUT NODEJS
+    Let's talk about Nodejs here a little real quick:
+    -Javascript is the programming language we've been learning so far
+        -Javascript is run by the browser
+    -Nodejs is a runtime environment used to execute Javascript code outside of a browser
+        -Hence why we used the node command to run the file since we're not in a browser
 
 */
 
