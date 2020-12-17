@@ -1,28 +1,88 @@
 // Course 5 - Environment and Review
 
-// Consider showing off final project in latter half of this course
-
 /*
+    Nodejs Installation
 
-POSSIBLY ENVIRONMENT SETUP INSTEAD OF REVIEW
-    SETUP
-    We'll start by downloading the NodeJS binaries from https://nodejs.org/en/ and installing
-    them on your computer. Once the binaries have been installed, you should be able to open the terminal (or command
-    prompt on Windows), run the 'node -v' command, and see an output indicating the Node version that was installed.
+    Download Node from:
+    https://nodejs.org/
+    Use the download link on the left, it's the most stable version
 
-    After installing Node, let's create a folder to store the files we will be working with. 
-    To do this, write 'mkdir node-workshop' and then 'cd node-workshop'. The mkdir commant 'makes' a directory and
-    the cd command 'changes directory', or moves you into it.
+    Go to the downloaded file and run it to install.
 
-    Once you are in the node-workshop directory, run the following command: 'node intro.js' and you should see an 
-    output in your terminal.
+    Click next through the installer and stick with all the default options. Agree to the terms and conditions.
     
-    Congrats! You just ran your first JavaScript file. We will be using the 'node' command to execute the files
-    we will write throughout this workshop.
+    DO NOT check to "automatically install the necessary tools..." - this installs Chocolatey and will take some time. We don't need it for what we're doing.
 
 */
 
-// 1. Write a variable that contains your name. Write another variable that contains your date of birth. Print those variables to the console.
+/*
+    After installing node
+
+    Show them how to open cmd prompt
+    WINDOWS: Type "command" in the search bar in bottom left and click Command Prompt
+    MAC: CMD+SPACE then search "terminal"
+    
+    Type "node -v" to have them see if their version of Node appears
+
+    Talk a little bit about the command prompt (terminal) and how we'll be using it a little in this course.
+
+    Have them create a folder at their root by typing:
+    mkdir node-workshop
+
+    Cover a couple concepts/commands:
+    cd - change directory
+    the file path
+    cd .. - moves back once to the parent directory
+    dir(windows) - displays all directories in given file path
+    others?
+
+*/
+
+/*
+    Download VSCode from:
+    https://code.visualstudio.com/download
+
+    Click download button according to your operating system
+    Go to your downloads and click the downloaded file to start the installer
+    Click Next through all of the default selections in the installer
+
+    Once it launches you should see the welcome screen. Click "Open Folder" and select the new directory you made "node-workshop"
+*/
+
+/*
+    VSCode Navigation
+
+    Create a file called index.js
+    console.log('My first js file!');
+    Save the file
+
+    Open integrated terminal in VSCode
+    node index.js to run the file
+
+    You ran your first file!
+
+    Let's talk about Nodejs here a little real quick:
+    -Javascript is the programming language we've been learning so far
+        -Javascript is run by the browser
+    -Nodejs is a runtime environment used to execute Javascript code outside of a browser
+        -Hence why we used the node command to run the file since we're not in a browser
+
+*/
+
+/*
+    Show off the final project
+
+    The finalProject folder contains all of the files and dependencies needed.
+    Run node index.js and show off the project.
+
+    The point of showing this is to give a bit of a preview of what we'll be making in the course and to show the possibilities of what a couple months of learning can do.
+
+*/
+
+// REVIEW QUESTIONS
+// Remind students to not forget to save!
+
+// 1. Create a variable that contains your name. Create another variable that contains your date of birth. Log those variables to the console, save your work, and run your file by typing node index.js into the command line and pressing enter
 
 const myName = 'Josh';
 let myDOB = '01/24/1988';
@@ -30,29 +90,19 @@ let myDOB = '01/24/1988';
 console.log(myName);
 console.log(myDOB);
 
+// OR
 console.log(myName, myDOB);
 
+// 2. Using those variables you just created, log to the console such that the output looks something like this but use your own name and birth date:
+// Hello, my name is Josh and I was born on 01/24/1988!
+
+// ANSWER
 console.log(
     'Hello, my name is ' + myName + ' and I was born on ' + myDOB + '!'
 );
-// output = Hello, my name is Josh and I was born on 01/24/1988!
-
-// 2. Write a variable that contains the outcome of the following mathematical formula: (8 + 7) / (4 - 1). Print the value of that variable to the console.
-
-const formula = (8 + 7) / (4 - 1);
-console.log(formula);
-// output: 5
-
-const formula2 = 8 + 7 / 4 - 1;
-console.log(formula2);
-// output: 8.75
-
-const formula3 = (8 + 7) / (4 - 1);
-console.log(formula3);
-// output: 5
 
 /*
-3. True or False Questions:
+3. console.log() the following statements to find out if they evaluate to true or false. Try to guess the output of each before you run the program.
 
 '5' === 5
 
@@ -60,12 +110,9 @@ console.log(formula3);
 
 (5 > 4) || (6 > 7) 
 
-15 !== 10
-
 !('7' == 7)
 
 */
-
 // Answers:
 console.log('5' === 5);
 // output = false
@@ -78,78 +125,22 @@ console.log(15 !== 10);
 console.log(!('7' == 7));
 // output = false
 
-// 4. You’re in a game of rock-paper-scissors. Your opponent has just thrown paper. Using an if-else statement and console.log statements, write up the various results of each possible throw. (paper vs rock, paper vs paper, and paper vs scissors).
+// 4. Using a function and a for loop, console.log() the area of squares with lengths 1 through 10 incrementing by 1.
+// Hint: remember area of a square = length * length
+// If they need help along the way, start to break down the problem for them:
+// 1. Create your function first to calculate the area
+// 2. Create your for loop. What is the starting value? etc.
+const areaOfSquare = length => {
+    return length * length;
+};
 
-let myThrow = 'paper';
-
-if (myThrow === 'rock') {
-    console.log('This is a loss for the tiger blood');
-} else if (myThrow === 'paper') {
-    console.log('Thai');
-} else if (myThrow === 'scissors') {
-    console.log('WIN!');
-} else {
-    console.log('Pick something else, homie');
+for (let i = 1; i <= 10; i++) {
+    console.log(areaOfSquare(i));
 }
 
-myThrow = 'rock';
-
-if (myThrow === 'rock') {
-    console.log('Loser');
-}
-if (myThrow === 'paper') {
-    console.log('Tieler');
-}
-if (myThrow === 'scissors') {
-    console.log('Winnnnnn');
-}
-if (myThrow !== 'rock' && myThrow !== 'paper' && myThrow !== 'scissors') {
-    console.log('Does not compute.');
-}
-
-// 5. You’re playing a rousing game of red light green light! Write up a ternary statement such that when light = green, you let the console know you will head forward. Otherwise, you will stop.
-
-const light = 'green';
-
-if (light === 'green') {
-    console.log('Go!');
-} else {
-    console.log('No!');
-}
-
-light === 'green' ? console.log('Go!') : console.log('No!');
-
-// 6. You’re a QA Engineer testing your company’s login page. Write up a switch statement based on the username entered. If username = “admin”, tell the console to go to the admin page. If username = “member”, tell the console to go to the member page. Otherwise, tell the console not to allow access.
-
-const username = 'admin';
-
-switch (username) {
-    case 'admin':
-        console.log('Go to the Admin page!');
-        break;
-    case 'member':
-        console.log('Go to the Member page!');
-        break;
-    default:
-        console.log('Do not allow access!');
-        break;
-}
-
-// 7. You’re on the board of directors for a school district. Write up if statement(s) based on age and location such that when students are between the ages of 5 and 18, AND they live in Boise, they notify the console that this student is accepted to the school district.
-
-let myLocation = 'Boise';
-let myAge = 20;
-
-if (myAge >= 5 && myAge <= 18) {
-    if (myLocation === 'Boise') {
-        console.log('yurin');
-    } else {
-        console.log('yurout');
+// 5. Now add an if statement inside of your for loop that makes it so that only squares with lengths greater than or equal to 8 are logged to the console.
+for (let i = 1; i <= 10; i++) {
+    if (i >= 8) {
+        console.log(areaOfSquare(i));
     }
-}
-
-if (myAge >= 5 && myAge <= 18 && myLocation === 'Boise') {
-    console.log('yurin');
-} else {
-    console.log('yurout');
 }
