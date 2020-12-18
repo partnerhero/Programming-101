@@ -1,5 +1,8 @@
 // Course 5 - Environment and Review
 
+// Josh will go over the installations
+// Encourage to participate since a good portion on content if review
+
 /*
     Nodejs Installation
 
@@ -82,7 +85,7 @@
 // REVIEW QUESTIONS
 // Remind students to not forget to save!
 
-// 1. Create a variable that contains your name. Create another variable that contains your date of birth. Log those variables to the console, save your work, and run your file by typing node index.js into the command line and pressing enter
+// 1. In your index.js file, create a variable that contains your name. Create another variable that contains your date of birth. Log those variables to the console, save your work, and run your file by typing node index.js into the Integrated Terminal and pressing enter.
 
 const myName = 'Josh';
 let myDOB = '01/24/1988';
@@ -113,7 +116,7 @@ console.log(
 !('7' == 7)
 
 */
-// Answers:
+// ANSWERS:
 console.log('5' === 5);
 // output = false
 console.log(5 > 4 && 6 > 7);
@@ -125,20 +128,28 @@ console.log(15 !== 10);
 console.log(!('7' == 7));
 // output = false
 
-// 4. Using a function and a for loop, console.log() the area of squares with lengths 1 through 10 incrementing by 1.
+// 4. You want to build an IKEA table but need a screwdriver first. A screwdriver costs 10 money, which means you can buy it if your spending money is greater than or equal to the cost of the screwdriver. Create a variable spendingMoney to hold the value of your current spending money. Write an if statement that logs whether or not you can buy the screwdriver.
+let spendingMoney = 15;
+
+if (spendingMoney >= 10) {
+    console.log('Buy that screwdriver.');
+} else {
+    console.log('Cannot buy screwdriver.');
+}
+
+// 5. Create a function that calculates the area of a square. Call that function inside a console.log() and run it in your terminal.
 // Hint: remember area of a square = length * length
-// If they need help along the way, start to break down the problem for them:
-// 1. Create your function first to calculate the area
-// 2. Create your for loop. What is the starting value? etc.
 const areaOfSquare = length => {
     return length * length;
 };
+
+// 6. Building from the previous problem, create a for loop that calls your area of a square function inside passing your iterator variable as the argument. Running this should log to the console the area of squares with lengths 1 through 10.
 
 for (let i = 1; i <= 10; i++) {
     console.log(areaOfSquare(i));
 }
 
-// 5. Now add an if statement inside of your for loop that makes it so that only squares with lengths greater than or equal to 8 are logged to the console.
+// 7. Now add an if statement inside of your for loop that makes it so that only squares with lengths greater than or equal to 8 are logged to the console.
 for (let i = 1; i <= 10; i++) {
     if (i >= 8) {
         console.log(areaOfSquare(i));
