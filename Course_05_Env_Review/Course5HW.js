@@ -4,7 +4,7 @@
     Work on these problems in VSCode in the index.js file we all set up together. To run your program when you want, open the terminal, make sure you're in the right directory, save your work, then type node index.js and press enter.
 
     Use the handy dandy Reference Guide to help with the homework:
-    
+    https://docs.google.com/document/d/1SBGFegxdaqa28VxYyfzxXbFM1y72RV0TA4LN-5bBnqk/edit?usp=sharing
 */
 
 /* 
