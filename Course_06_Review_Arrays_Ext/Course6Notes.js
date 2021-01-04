@@ -1,41 +1,183 @@
-//Arrays and methods
+// Extensions, Reviews, and Arrays!
 
 /*
+    VSCode extension: Prettier
 
-ARRAYS
-Arrays organize and store data in lists using the [] bracket symbols. Each item of data in an array is called an element, and any data type can be stored in arrays: strings, numbers, booleans, etc. The data is ordered, and each element has an index that denotes its position within the array starting at 0.
-
+    Josh will do quick Prettier extension install and setup follow-along
 */
 
-// Quick Summary
-// We save arrays to variables like this:
-const groceryList = ['Toilet Paper', 'Eggs', 'Bread'];
-console.log(groceryList);
+/*
+    Quick Review
 
-// Each element's position within the array is called its index, and it starts at 0. So, Toilet Paper's index is 0, eggs is 1, and bread is 2.
+    Let's ask if anybody had trouble with the homework, and specifically where they had the trouble. Even if they finished the homework with all the right answers, we can ask if there were spots that challenged them.
 
-// To access an individual element, use bracket notation:
-console.log(groceryList[2]); // output: Bread
+    If nobody answers, Josh will chime in with something.
+*/
+
+/*
+    Josh Intro
+
+    Today we're talking about arrays. Think of arrays as lists. With arrays we can create lists of almost anything we want! Kind of like writing a to do list on a notepad or computer. Arrays allow us to store data in lists in Javascript and then manage them.
+*/
+
+// We're probably all familiar with lists of chores! Let's make one right now!
+// Use a multi-line comment:
+/*
+Chores:
+
+1. Do laundry
+2. Go grocery shopping
+3. Get a haircut
+
+Once we finish with something on our list, we'll want to cross it off our list. We also want to be able to add new chores to our list, and even make edits to the chores on the list.
+
+We can do all of these things using arrays in Javascript. Arrays store data in lists and then let us make changes to the data. There are a lot of cool things that Javascript allows us to do with arrays.
+*/
+
+// Now let's all create our chores as a list in Javascript, called an array.
+// Explain the notation as you go along (i.e. variable, brackets, commas, etc.)
+const chores = ['Do laundry', 'Go grocery shopping', 'Get a haircut'];
+// Log to the console to see your list
+console.log(chores);
+
+// Arrays can store many data types (i.e. numbers, strings, booleans), but we'll mostly be working with strings today.
+
+// TASK 1:
+// Let's make another list! We said we need to go grocery shopping, so go ahead and make a grocery list in array format like above. Name your array groceryList and put 'Milk' 'Eggs' and 'Bread' on your list. Log your array to the console once you're done.
+const groceryList = ['Milk', 'Eggs', 'Bread'];
+console.log(groceryList); // Does everyone see their array output?
+
+// Now, let's break down this grocery list a little bit and talk more about how arrays work.
+
+// Each piece of data in this array is called an element.
+// 'Milk' is an element, 'Eggs' is an element, and 'Bread' is an element.
+
+/*
+    INDEX
+
+    We can keep track of each element's position in the array using what is called its index. The first element in an array is at index 0, and it increments by one for each element after that. This means the index of 'Milk' is 0 and the index of 'Eggs' is 1. This will help us be able to manage the elements in our lists!
+
+    What does that mean the index of the element 'Bread' is?
+
+    If we add another element to the end of our array, that will be at index 3 and so on.
+*/
+
+// Let's say we want to access only the first element on our groceryList array and log it to the console. First we need to know it's index! What is the index of the first element?
+// So, using the index of the element, and brackets [], we can access and log to the console a single element from our array.
+console.log(groceryList[0]); // output: Milk
+
+// What would the output of this console.log be?
 console.log(groceryList[1]); // output: Eggs
 
-//---------------------------------------------------------------
+// TASK 2:
+// Now on your own, log to the console the element 'Bread' using the bracket notation and index.
+console.log(groceryList[2]); // output: Bread
 
-// Even though groceryList is declared with a const, the values inside the array, which are called elements, are mutable. This means we can mutate them if we want, but we cannot reassign or redeclare the groceryList array.
+// TASK 3 Part 1:
+// Create an array of any three movie titles and then log that array to the console.
+const movies = ['The Dark Knight', 'Inception', 'The Prestige'];
+console.log(movies);
 
-// Let's say we have enough eggs from the last time we shopped, we can change the Eggs element to something we need like this:
-groceryList[1] = 'Milk';
+// Part 2:
+// Now log to the console the element at index 0;
+console.log(movies[0]);
+
+//-------------------------------------------------------------------------
+
+/*
+    Mutation
+
+    Let's talk about the concept of altering values of some variables that are declared with const; this is known as mutation.
+
+    Our groceryList array here is declared with const, but the array itself is mutable, meaning we can mutate or change the array if we want. To be clear, we still cannot reassign or redeclare the groceryList array. In javascript, this is only possible with arrays and objects, but values like strings, numbers, and booleans cannot be mutated.
+
+    MAYBE REMOVE THIS DESCRIPTION: Const is a type of variable declaration, const is a constant reference and not constant value. The const declaration creates a reference to a value. It does not mean the value it holds cannot be changed, just that the variable identifier cannot be reassigned.
+    
+    Mutations can include adding or removing elements and changing elements, but there are many other ways that arrays can be mutated.
+*/
+
+// Let's look at an example to make sense of this. Looking back at our groceryList array, Let's say we actually have enough eggs but we actually need Salt. So let's change Eggs into Salt.
+// To do this we again use bracket notation and the index to access the element we want: 'Eggs'
+groceryList[1] = 'Salt';
+// If we log our array to the console now, we'll see that the element at index 1 changed from 'Eggs' to 'Salt'
 console.log(groceryList);
 
-//---------------------------------------------------------------
+// TASK 4:
+// Create an array of three hobbies
+const myHobbies = ['video games', 'sleeping', 'eating'];
 
-// Arrays have properties that we can use to get information about the array. One example of a useful property is the .length property.
+// Log the first element of your array to the console
+console.log(myHobbies[0]);
 
-// .length property - returns the number of elements in an array
+// Change the last element of your array to SOMETHING
+myHobbies[2] = 'SOMETHING';
+
+//------------------------------------------------------------------------------
+// END OF COURSE 6
+//----------------------------------------------------------------------------
+
+// Arrays have properties that we can use to get information about the array.
+// WHAT IS A PROPERTY?
+// One example of a useful property is the length property, which returns the total number of elements in an array.
+
+// In this array of types of shoes, how many elements are there?
 const shoeTypes = ['tennis', 'basketball', 'cleats', 'boots'];
 
+// That's right, 4! The length property will show us this too.
+// Talk about dot notation.
 console.log(shoeTypes.length); // output: 4
 
-//--------------------------------------------------------------------
+// If we think back to our list of chores, a good use for the length property could be to set up a conditional statment telling us if the length of our chore list is longer than 5, then we need to take two days to do all of our chores or something.
+
+// TASK 4:
+// Create an array of
+
+// We'll be talking a lot more about properties and other cool things you can do with arrays in the next course.
+
+// FOR LOOPS AND ARRAYS:
+// The length property can be useful for iterating through array indexes.
+// Given this fruits array, use a for loop to log each item in the array to the console. (Hint: Remember that array indexes start at 0)
+const fruits = ['apple', 'peach', 'grape', 'elderberry'];
+
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+//------------------------------------------------------------------------------
+
+// HOMEWORK
+// Arrays HW Problem 1
+// Write a list of your four favorite film stars and log each to the console using a for loop.
+const starNames = [
+    'Cathryn Blanchett',
+    'Robert Downey Sr',
+    'Zach Galifanakiszcsz',
+    'Cassandra Bullock',
+];
+
+for (let i = 0; i < starNames.length; i++) {
+    console.log(starNames[i]);
+}
+
+// Bonus Challenge Question!
+// Given these two arrays, write a program that compares the numbers between the arrays and logs to the console any numbers that are in both arrays. (HINT: Nested for loops can be useful)
+
+const myArray = [6, 20, 19, 17];
+const yourArray = [20, 17, 23, 5];
+
+for (let i = 0; i < myArray.length; i++) {
+    for (let j = 0; j < yourArray.length; j++) {
+        if (myArray[i] === yourArray[j]) {
+            console.log('Both arrays have the number: ' + yourArray[j]);
+        }
+    }
+}
+
+//-----------------------------------------------------------------------------
+
+// WHAT IS A METHOD?
+// A method is basically a pre-built function that performs a specific task on whatever it's called on (WORDING)
+// We can call methods on array to do a wide variety of tasks, here are a few useful ones.
 
 // Arrays can also have methods called on them, which perform a specific action on the array according to the specific method. You are actually already familiar with one method, .log() is a console method, and this is the format we use when calling methods.
 
@@ -221,7 +363,6 @@ You and your friend are playing Scrabble and have made a bet: whoever can create
 1. Using the foreach method, cycle through the array and save the longest element to a variable. (Hint: if this element is longer than the previously longest variable, reassign the variable.)
 2. Use the indexof method to determine who played the longest word. Write to the console a message declaring the winning word, and the person who played it.
 HINT: You can use modulus (mod) with a conditional statement to figure out which player's turn it is! See end of recording for Course 6 to learn more about mod.
-
 */
 
 const words = [
@@ -348,103 +489,3 @@ colors.forEach(color => {
 */
 
 //--------------------------------------------------------------------
-// MIXED UP NOTES:
-/*
-ARRAYS
-Arrays organize and store data in lists using the [] bracket symbols. Each item of data in an array is called an element, and any data type can be stored in arrays: strings, numbers, booleans. The data is ordered, and each element has an index that denotes its position within the array.
-*/
-
-// Example, we save arrays to variables like this:
-const groceryList = ['Toilet Paper', 'Eggs', 'Bread'];
-console.log(groceryList);
-// Each element's position within the array is called its index, and it starts at 0. So, Toilet Paper's index is 0, eggs is 1, and bread is 2.
-
-// groceryList is an array with 3 elements. To access an individual element requires bracket notation:
-console.log(groceryList[2]); // output will be Bread
-
-// What will we see with this?
-console.log(groceryList[1]); // output will be Eggs
-
-// Even though groceryList is declared with a const, the array is mutable, meaning we can mutate the elements if we like. We still cannot reassign the groceryList array though, we can only reassign elements when declaring with const. Let's say we have enough eggs from the last time we shopped, we can change the Eggs element to something else:
-groceryList[1] = 'Milk';
-console.log(groceryList);
-
-// QUICK TASK 1:
-// Create an array of three hobbies
-const myHobbies = ['video games', 'sleeping', 'eating'];
-
-// Log the first element of your array to the console
-console.log(myHobbies[0]);
-
-// Change the last element of your array to SOMETHING
-myHobbies[2] = 'SOMETHING';
-
-// There are certain properties and methods that can be used in javascript, and I encourage you to look through some of the resources out there to discover what they can do. Here's one very useful example, the length property.
-// We'll be talking a lot about these proper ties and methods in the next course
-
-// This returns the length of an array:
-console.log(myHobbies.length);
-// Go ahead and try it with your hobbies array
-
-// ARRAYS TASK 2:
-// The length property can be useful for iterating through array indexes.
-// Given this fruits array, use a for loop to log each item in the array to the console. (Hint: Remember that array indexes start at 0)
-const fruits = ['apple', 'peach', 'grape', 'elderberry'];
-
-for (let i = 0; i < fruits.length; i++) {
-    console.log(fruits[i]);
-}
-
-// HOMEWORK
-// When would you want to use a global variable? When not?
-
-// Functions HW Problem 1
-// Write a function where you input the day of the week as an argument and it tells you whether to take the trash out or not on that day.
-const takeOutTrash = day => {
-    if (day === 'Thursday') {
-        return true;
-    } else {
-        return false;
-    }
-};
-
-console.log(takeOutTrash('Tuesday')); // output is false
-console.log(takeOutTrash('Thursday')); // output is true
-
-// Functions HW Problem 2
-// Using a function and a for loop, console.log the area of squares with lengths 1 through 10 incrementing by one.
-// Hint: remember area of a square = length * length
-const areaOfSquare = length => {
-    return length * length;
-};
-
-for (let i = 1; i <= 10; i++) {
-    console.log(areaOfSquare(i));
-}
-
-// Arrays HW Problem 1
-// Write a list of your four favorite film stars and log each to the console using a for loop.
-const starNames = [
-    'Cathryn Blanchett',
-    'Robert Downey Sr',
-    'Zach Galifanakiszcsz',
-    'Cassandra Bullock',
-];
-
-for (let i = 0; i < starNames.length; i++) {
-    console.log(starNames[i]);
-}
-
-// Bonus Challenge Question!
-// Given these two arrays, write a program that compares the numbers between the arrays and logs to the console any numbers that are in both arrays. (HINT: Nested for loops can be useful)
-
-const myArray = [6, 20, 19, 17];
-const yourArray = [20, 17, 23, 5];
-
-for (let i = 0; i < myArray.length; i++) {
-    for (let j = 0; j < yourArray.length; j++) {
-        if (myArray[i] === yourArray[j]) {
-            console.log('Both arrays have the number: ' + yourArray[j]);
-        }
-    }
-}
