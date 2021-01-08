@@ -1,10 +1,4 @@
-// Extensions, Reviews, and Arrays!
-
-/*
-    VSCode extension: Prettier
-
-    Josh will do quick Prettier extension install and setup follow-along
-*/
+// Arrays!
 
 /*
     Quick Review
