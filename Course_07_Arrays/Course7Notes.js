@@ -1,14 +1,6 @@
 // Course 7 - Arrays!
 
 /*
-    Quick Review
-
-    Let's ask if anybody had trouble with the homework, and specifically where they had the trouble. Even if they finished the homework with all the right answers, we can ask if there were spots that challenged them.
-
-    If nobody answers, Josh will chime in with something.
-*/
-
-/*
     Josh Intro
 
     Today we're talking about arrays. Think of arrays as lists. With arrays we can create lists of almost anything we want! Kind of like writing a to do list on a notepad or computer. Arrays allow us to store data in lists in Javascript and then manage them.
@@ -106,13 +98,11 @@ console.log(myHobbies[0]);
 // Change the last element of your array to SOMETHING
 myHobbies[2] = 'SOMETHING';
 
-//------------------------------------------------------------------------------
-// END OF COURSE 6
-//----------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
-// Arrays have properties that we can use to get information about the array.
-// WHAT IS A PROPERTY?
-// One example of a useful property is the length property, which returns the total number of elements in an array.
+// Length Property
+
+// Arrays have a property we can access to gain more information about them. This is called the length property, and it tells us the length of the array: how many many elements are in the array.
 
 // In this array of types of shoes, how many elements are there?
 const shoeTypes = ['tennis', 'basketball', 'cleats', 'boots'];
@@ -121,12 +111,41 @@ const shoeTypes = ['tennis', 'basketball', 'cleats', 'boots'];
 // Talk about dot notation.
 console.log(shoeTypes.length); // output: 4
 
-// If we think back to our list of chores, a good use for the length property could be to set up a conditional statment telling us if the length of our chore list is longer than 5, then we need to take two days to do all of our chores or something.
+// It can be easy to get this confused with the index sometimes too.
+
+// If we think back to our list of chores, a good use for the length property could be to set up a conditional statment telling us if the length of our chore list is longer than 3, then we need to take two days to do all of our chores.
+const chores = [
+    'Do laundry',
+    'Go grocery shopping',
+    'Get a haircut',
+    'take out trash',
+];
+const doChores = () => {
+    if (chores.length > 3) {
+        console.log('Take 2 days to complete your chores.');
+    } else {
+        console.log('You can do all your chores today.');
+    }
+};
+doChores();
 
 // TASK 4:
-// Create an array of
+// Create an array of the three primary colors (red, yellow, blue). Create a function with no parameters called colorChecker and inside this function write an if statement. Your if statement should check if the length of the color array is 3. Return true if length is 3 and false if not.
+const colors = ['red', 'yellow', 'blue'];
+const colorChecker = () => {
+    if (colors.length === 3) {
+        return true;
+    } else {
+        return false;
+    }
+};
+console.log(colorChecker());
 
-// We'll be talking a lot more about properties and other cool things you can do with arrays in the next course.
+//------------------------------------------------------------------------------
+// END OF COURSE 7
+//------------------------------------------------------------------------------
+
+// If extra time
 
 // FOR LOOPS AND ARRAYS:
 // The length property can be useful for iterating through array indexes.
@@ -137,10 +156,6 @@ for (let i = 0; i < fruits.length; i++) {
     console.log(fruits[i]);
 }
 
-//------------------------------------------------------------------------------
-
-// HOMEWORK
-// Arrays HW Problem 1
 // Write a list of your four favorite film stars and log each to the console using a for loop.
 const starNames = [
     'Cathryn Blanchett',
@@ -153,7 +168,7 @@ for (let i = 0; i < starNames.length; i++) {
     console.log(starNames[i]);
 }
 
-// Bonus Challenge Question!
+// Challenge Question!
 // Given these two arrays, write a program that compares the numbers between the arrays and logs to the console any numbers that are in both arrays. (HINT: Nested for loops can be useful)
 
 const myArray = [6, 20, 19, 17];
