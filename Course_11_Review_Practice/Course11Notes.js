@@ -1,4 +1,5 @@
-// COURSE 8 - REVIEW
+// COURSE 11 - REVIEW
+// arrays, objects, classes
 
 // Template Literals
 
