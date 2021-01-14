@@ -2,6 +2,20 @@
 
 // Quick Review of Arrays
 
+// Daniel's Challenge Question!
+// Given these two arrays, write a program that compares the numbers between the arrays and logs to the console any numbers that are in both arrays. (HINT: Nested for loops can be useful)
+
+const myArray = [6, 20, 19, 17];
+const yourArray = [20, 17, 23, 5];
+
+for (let i = 0; i < myArray.length; i++) {
+    for (let j = 0; j < yourArray.length; j++) {
+        if (myArray[i] === yourArray[j]) {
+            console.log('Both arrays have the number: ' + yourArray[j]);
+        }
+    }
+}
+
 //-----------------------------------------------------------------------------
 
 // WHAT IS A METHOD?
