@@ -1,9 +1,13 @@
 // Course 7 - Arrays!
 
+// HW Review
+
 /*
-    Josh Intro
+    Intro
 
     Today we're talking about arrays. Think of arrays as lists. With arrays we can create lists of almost anything we want! Kind of like writing a to do list on a notepad or computer. Arrays allow us to store data in lists in Javascript and then manage them.
+
+    We've talked about data types like strings, numbers, and booleans, and now we're learning a new one called an array.
 */
 
 // We're probably all familiar with lists of chores! Let's make one right now!
@@ -65,7 +69,7 @@ const movies = ['The Dark Knight', 'Inception', 'The Prestige'];
 console.log(movies);
 
 // Part 2:
-// Now log to the console the element at index 0;
+// Now log to the console the first element in this array.
 console.log(movies[0]);
 
 //-------------------------------------------------------------------------
@@ -77,26 +81,25 @@ console.log(movies[0]);
 
     Our groceryList array here is declared with const, but the array itself is mutable, meaning we can mutate or change the array if we want. To be clear, we still cannot reassign or redeclare the groceryList array. In javascript, this is only possible with arrays and objects, but values like strings, numbers, and booleans cannot be mutated.
 
-    MAYBE REMOVE THIS DESCRIPTION: Const is a type of variable declaration, const is a constant reference and not constant value. The const declaration creates a reference to a value. It does not mean the value it holds cannot be changed, just that the variable identifier cannot be reassigned.
-    
     Mutations can include adding or removing elements and changing elements, but there are many other ways that arrays can be mutated.
+
+    Why can we mutate arrays and not other data types? Well, the simple answer for now is that since arrays are a more complex data structure we can manipulate pieces of them. We'll get more into that as we continue to cover more complex data types.
+    
 */
 
-// Let's look at an example to make sense of this. Looking back at our groceryList array, Let's say we actually have enough eggs but we actually need Salt. So let's change Eggs into Salt.
+// Let's look at an example to make sense of this. Looking back at our groceryList array, Let's say we actually have enough Eggs but we actually need Salt. So let's change Eggs into Salt.
 // To do this we again use bracket notation and the index to access the element we want: 'Eggs'
 groceryList[1] = 'Salt';
 // If we log our array to the console now, we'll see that the element at index 1 changed from 'Eggs' to 'Salt'
 console.log(groceryList);
 
 // TASK 4:
-// Create an array of three hobbies
-const myHobbies = ['video games', 'sleeping', 'eating'];
+// Create an array of three fun sports. Then log the first element of your array to the console.
+const sports = ['video games', 'football', 'snowboarding'];
+console.log(sports[0]);
 
-// Log the first element of your array to the console
-console.log(myHobbies[0]);
-
-// Change the last element of your array to SOMETHING
-myHobbies[2] = 'SOMETHING';
+// Let's say you want to change the last sport in your array to chess. Use the syntax we learned to do this, and then log your entire array to the console so you can see your change.
+sports[2] = 'chess';
 
 //----------------------------------------------------------------------------------------
 
@@ -104,14 +107,18 @@ myHobbies[2] = 'SOMETHING';
 
 // Arrays have a property we can access to gain more information about them. This is called the length property, and it tells us the length of the array: how many many elements are in the array.
 
-// In this array of types of shoes, how many elements are there?
-const shoeTypes = ['tennis', 'basketball', 'cleats', 'boots'];
+// In this array of beverages, how many elements are there?
+const beverages = ['water', 'juice', 'soda', 'tea'];
 
 // That's right, 4! The length property will show us this too.
 // Talk about dot notation.
-console.log(shoeTypes.length); // output: 4
+console.log(beverages.length); // output: 4
 
 // It can be easy to get this confused with the index sometimes too.
+
+// Quick TASK:
+// Log to the console the length of your beverages array.
+console.log(beverages.length);
 
 // If we think back to our list of chores, a good use for the length property could be to set up a conditional statment telling us if the length of our chore list is longer than 3, then we need to take two days to do all of our chores.
 const chores = [
@@ -122,12 +129,12 @@ const chores = [
 ];
 const doChores = () => {
     if (chores.length > 3) {
-        console.log('Take 2 days to complete your chores.');
+        return 'Take 2 days to complete your chores.';
     } else {
-        console.log('You can do all your chores today.');
+        return 'You can do all your chores today.';
     }
 };
-doChores();
+console.log(doChores());
 
 // TASK 4:
 // Create an array of the three primary colors (red, yellow, blue). Create a function with no parameters called colorChecker and inside this function write an if statement. Your if statement should check if the length of the color array is 3. Return true if length is 3 and false if not.
@@ -145,39 +152,25 @@ console.log(colorChecker());
 // END OF COURSE 7
 //------------------------------------------------------------------------------
 
-// If extra time
+// If extra time...
+// Create an array of pizza toppings with three elements, and then log to the console the length of the array.
+const toppings = ['cheese', 'garlic', 'salami'];
+console.log(toppings.length);
 
 // FOR LOOPS AND ARRAYS:
 // The length property can be useful for iterating through array indexes.
-// Given this fruits array, use a for loop to log each item in the array to the console. (Hint: Remember that array indexes start at 0)
+// Given this fruits array, we can use a for loop to log each item in the array to the console.
 const fruits = ['apple', 'peach', 'grape', 'elderberry'];
 
 for (let i = 0; i < fruits.length; i++) {
     console.log(fruits[i]);
 }
+// Explain the logic here.
 
-// Write a list of your four favorite film stars and log each to the console using a for loop.
-const starNames = [
-    'Cathryn Blanchett',
-    'Robert Downey Sr',
-    'Zach Galifanakiszcsz',
-    'Cassandra Bullock',
-];
+// TASK:
+// Write a list of three vegetables and log each to the console using a for loop.
+const vegetables = ['Zucchini', 'Eggplant', 'Corn'];
 
-for (let i = 0; i < starNames.length; i++) {
-    console.log(starNames[i]);
-}
-
-// Challenge Question!
-// Given these two arrays, write a program that compares the numbers between the arrays and logs to the console any numbers that are in both arrays. (HINT: Nested for loops can be useful)
-
-const myArray = [6, 20, 19, 17];
-const yourArray = [20, 17, 23, 5];
-
-for (let i = 0; i < myArray.length; i++) {
-    for (let j = 0; j < yourArray.length; j++) {
-        if (myArray[i] === yourArray[j]) {
-            console.log('Both arrays have the number: ' + yourArray[j]);
-        }
-    }
+for (let i = 0; i < vegetables.length; i++) {
+    console.log(vegetables[i]);
 }
