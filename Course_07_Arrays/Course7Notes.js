@@ -19,9 +19,7 @@ Chores:
 2. Go grocery shopping
 3. Get a haircut
 
-Once we finish with something on our list, we'll want to cross it off our list. We also want to be able to add new chores to our list, and even make edits to the chores on the list.
-
-We can do all of these things using arrays in Javascript. Arrays store data in lists and then let us make changes to the data. There are a lot of cool things that Javascript allows us to do with arrays.
+Arrays store data in lists and then let us make changes to the data. There are a lot of cool things that Javascript allows us to do with arrays.
 */
 
 // Now let's all create our chores as a list in Javascript, called an array.
@@ -100,6 +98,7 @@ console.log(sports[0]);
 
 // Let's say you want to change the last sport in your array to chess. Use the syntax we learned to do this, and then log your entire array to the console so you can see your change.
 sports[2] = 'chess';
+console.log(sports);
 
 //----------------------------------------------------------------------------------------
 
@@ -117,8 +116,10 @@ console.log(beverages.length); // output: 4
 // It can be easy to get this confused with the index sometimes too.
 
 // Quick TASK:
-// Log to the console the length of your beverages array.
-console.log(beverages.length);
+// Log the length of the following array to the console.
+const countries = ['Canada', 'Germany', 'Russia'];
+// ANSWER:
+console.log(countries.length);
 
 // If we think back to our list of chores, a good use for the length property could be to set up a conditional statment telling us if the length of our chore list is longer than 3, then we need to take two days to do all of our chores.
 const chores = [
