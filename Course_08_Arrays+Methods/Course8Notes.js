@@ -1,8 +1,10 @@
 // Course 8 - Array Methods!
 
-// Quick Review of Arrays
+/*
+    Last course we introduced the basics of arrays, and today you're going to learn more about how to manage them.
+*/
 
-// Daniel's Challenge Question!
+// Quick Review of Arrays: Daniel's Challenge Question!
 // Given these two arrays, write a program that compares the numbers between the arrays and logs to the console any numbers that are in both arrays. (HINT: Nested for loops can be useful)
 
 const myArray = [6, 20, 19, 17];
@@ -19,86 +21,77 @@ for (let i = 0; i < myArray.length; i++) {
 //-----------------------------------------------------------------------------
 
 // WHAT IS A METHOD?
-// A method is basically a pre-built function that performs a specific task on whatever it's called on (WORDING)
-// We can call methods on array to do a wide variety of tasks, here are a few useful ones.
 
-// Arrays can also have methods called on them, which perform a specific action on the array according to the specific method. You are actually already familiar with one method, .log() is a console method, and this is the format we use when calling methods.
+// A method is basically a function with a pre-determined set of instructions. We can call methods on our arrays to perform a variety of tasks, but we'll only be showing you a few useful ones.
 
-// .indexOf() - a method that returns the first index at which a given element can be found in an array. It returns -1 if the element is not present
-const stars = ['Arcturas', 'Vega', 'Alpha Cetauri', 'Sirius', 'Betelgeuse'];
+// You are all actually familiar with a method already, the .log() method is a console method that performs the task of logging something to the console. Methods for arrays use the same dot notation as the console.log().
+
+// .indexOf() - a method that returns the first index at which a given element can be found in an array. It returns -1 if the element is not present.
+const stars = ['Arcturas', 'Vega', 'Sirius', 'Betelgeuse'];
 
 console.log(stars.indexOf('Sirius')); // output: 1
 
-// Rewriting 'Vega' to 'Sagitarrius A*' will output -1
+// What will my output be for the following?
+console.log(stars.indexOf('Arcturas')); // output: 0
+
+// What will my output be for the following?
+console.log(stars.indexOf('North Star')); // output: -1
 
 //--------------------------------------------------------------------
 
-// .pop() - removes the last element of an array and returns that removed element
-// We have an array here of unreleased video games in descending order.
-const unreleasedGames = [
-    'Cyberpunk 2077',
-    'The Last of Us II',
-    'Final Fantasy VII Remake',
-];
+// Let's say you buy and sell houses but you're only allowed to own three in addition to your permanent residence. You keep your inventory organized using an array.
+const myHouses = ['house1', 'house2', 'house3'];
 
-// FF7 Remake released, so let's remove the last element from this array
-unreleasedGames.pop();
-console.log(unreleasedGames);
-// output: ['Cyberpunk 2077', 'The Last of Us II']
+// You just sold 'house3' so now you need to remove it from your array. We will be using a method to mutate this array and remove the last element. This is called the .pop() method
+myHouses.pop();
+console.log(myHouses);
+// The pop() method also returns the removed element. Console.log() the above method to show this.
+// You can even save the .pop() method to a variable if you want.
 
-// Can also save the .pop() method to a variable if you want.
+// TASK 1
+// You are given this array of unreleased films and your task is to remove the last element in the aray since that movie has been released now. Save the removed element to variable called todaysRelease, and the log the array to the console to check your work.
+const unreleasedFilms = ['Space Jam', 'Avatar 2', 'The Dig'];
+
+// ANSWER
+const todaysRelease = unreleasedFilms.pop();
+console.log(unreleasedFilms);
 
 // .shift() - same as .pop() but removes one or more elements from the BEGINNING of an array and returns the removed element
 
 //--------------------------------------------------------------------
 
-// .push() - adds one or more elements to the end of an array and returns the new length of the array
+// Going back to our chores example from last course. If we want to add a chore to our list, we can use the .push() method, which adds one or more elements to the end of an array. This method returns the new length of the array instead of an element.
 const chores = ['wash dishes', 'do laundry', 'take out trash'];
 
 chores.push('make bed');
 console.log(chores);
-// output: ['wash dishes', 'do laundry', 'take out trash', 'make bed']
 
-// Can also add more than one element at a time using a comma
+// Can also add more than one element at a time using a comma.
+chores.push('stir cheese', 'mow lawn');
 
 // .unshift() - same as .push() but adds one or more elements to the BEGINNING of an array and returns the new length of the array
 
 //--------------------------------------------------------------------
 
-/*
-Brief background of filter method
+// FILTER METHOD
 
-// without using the .filter() method
-let canDrink = [];
-for (let i = 0; i < ages.length; i++) {
-  if (ages[i] >= 21) {
-    canDrink.push(ages[i]);
-  }
-}
-console.log(canDrink);
+// You organized a local food truck event and as requested you received the ages of the customers from the first hour of the event. Your goal is to create a new array from this data that only contains ages that are 18 and older so you can learn more about your customer base.
+// We can use the filter() method to accomplish this. The filter() method creates a new array with all the elements that satisfy a condition you give it.
+const ages = [12, 32, 49, 18, 21, 20, 6, 50, 16];
 
-// old syntax for using the .filter() method
-const canDrink = ages.filter(function (age) {
-  if (age >= 21) {
-    return true;
-  }
-})
-console.log(canDrink);
+// Go over the syntax (declaration, callback function) and explain the logic of the steps here.
+const isAdult = ages.filter(age => {
+    return age >= 18;
+});
+// age here acts as a placeholder for each element in the ages array
+console.log(isAdult);
 
-*/
+// Can also be written like this:
+const isAdult = ages.filter(age => age >= 18);
 
-// .filter() - creates a new array with all elements that satisfy the given condition
-// Let's say we have an array of ages and we want to find the ages that are 21 and older so we know who is legally allowed to drink alcohol in the United States
-const ages = [12, 32, 49, 18, 21, 20, 6, 50, 70];
-
-const canDrink = ages.filter(age => age >= 21);
-
-console.log(canDrink);
-
-//---------------------------------------------------------
-
-// TASK 1 - FILTER
-// Use the filter method on array below to create a new array of all the words whose length is longer than 6 letters. Save the array to a variable named result and log that variable to the console.
+// TASK 2
+// Use the filter method on the given array to create a new array of all the words whose length is longer than 6 letters. Save the array to a variable named result and log that variable to the console.
+// HINT: the .length property can be used on individual elements
 const words = [
     'sky',
     'exuberant',
@@ -109,12 +102,13 @@ const words = [
     'sorceress',
 ];
 
+// ANSWER
 const result = words.filter(word => word.length <= 7);
-// .length here is used on each element in array - can be used on both arrays and elements
-
 console.log(result);
 
 //------------------------------------------------------------------
+
+// FOREACH METHOD
 
 // .forEach() - executes a provided function once for each array element. Note: this does not mutate any elements in the array
 const fruits = ['mango', 'papaya', 'pineapple', 'kiwi'];
@@ -125,15 +119,16 @@ fruits.forEach(fruitType => {
 });
 // fruitType here is a parameter and acts as a placeholder for each element in the array
 
-//--------------------------------------------------------------------
-
-// TASK 2 - FOREACH
+// TASK 3
 // Given this array of numbers, use the forEach method to add 5 to and log each element to the console.
 const numbers = [17, 65, 288, 50, 0, 11, 99];
 
+// ANSWER
 numbers.forEach(number => console.log(number + 5));
 
 //-----------------------------------------------------------
+
+// MAP METHOD
 
 // .map() - similar to .forEach(), but CREATES A NEW ARRAY resulting from calling a provided function on each array element
 // We have an array of numbers here and want to divide each number by two
@@ -144,16 +139,13 @@ const halfNumbers = bigNumbers.map(bigNumber => {
     return bigNumber / 2;
 });
 
-console.log(halfNumbers);
-// output [12, 25, 20, 20]
-
-//----------------------------------------------------
+console.log(halfNumbers); // output [12, 25, 20, 20]
 
 // TASK 3 - MAP
-// You work in an Accounts Receivable department and are checking a spreadsheet for outstanding customer payments. You notice your coworker left off decimal points on the spreadsheet, so numbers are appearing incorrectly. (for example: $500.00 is appearing as $50000)
+// You work in an Accounts Receivable department and are checking a spreadsheet for outstanding customer payments. You notice your coworker left off decimal points on the spreadsheet, so numbers are appearing incorrectly. (for example: 500.00 is appearing as 50000)
 // (Spreadsheet values: [43500, 56000, 7900, 73200, 50000, 52200, 63000, 12400, 18300, 39700] )
 
-// Using the map method, fix the numbers so that they show the correct dollar amount owed to the company.
+// Using the map method, fix the numbers so that they show the correct dollar amount owed to the company and then log your new array to the console.
 
 const dollarAmounts = [
     43500,
@@ -173,6 +165,8 @@ const reducedDollarAmounts = dollarAmounts.map(dollarAmount => {
 });
 console.log(reducedDollarAmounts);
 
+//-------------------------------------------------------------
+// END OF COURSE 8
 //-------------------------------------------------------------
 
 // HOMEWORK
@@ -332,3 +326,40 @@ colors.forEach(color => {
 */
 
 //--------------------------------------------------------------------
+
+// MORE EXTRA
+
+/*
+const unreleasedGames = [
+    'Cyberpunk 2077',
+    'The Last of Us II',
+    'Final Fantasy VII Remake',
+];
+
+// FF7 Remake released, so let's remove the last element from this array
+unreleasedGames.pop();
+console.log(unreleasedGames);
+// output: ['Cyberpunk 2077', 'The Last of Us II']
+*/
+
+/*
+Brief background of filter method
+
+// without using the .filter() method
+let canDrink = [];
+for (let i = 0; i < ages.length; i++) {
+  if (ages[i] >= 21) {
+    canDrink.push(ages[i]);
+  }
+}
+console.log(canDrink);
+
+// old syntax for using the .filter() method
+const canDrink = ages.filter(function (age) {
+  if (age >= 21) {
+    return true;
+  }
+})
+console.log(canDrink);
+
+*/
