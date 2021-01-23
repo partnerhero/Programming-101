@@ -1,10 +1,23 @@
 // Course 8 - Array Methods!
 
-/*
-    Last course we introduced the basics of arrays, and today you're going to learn more about how to manage them.
-*/
+// Quick Review of Arrays: Let's review question number 5 from last course's homework.
 
-// Quick Review of Arrays: Daniel's Challenge Question!
+// 5. Using the original array in question 3 (const hobbies = ['playing video games', 'snorkeling', 'rock climbing', 'playing piano']), write a for loop that iterates through the array and prints "<hobby> is fun to do!" for each hobby in the array.
+
+const hobbies = [
+    'playing video games',
+    'snorkeling',
+    'rock climbing',
+    'playing piano',
+];
+
+for (i = 0; i < hobbies.length; i++) {
+    console.log(hobbies[i] + ' is fun to do!');
+}
+
+//----------------------------------------------------------------------------
+
+// Daniel's Challenge Question!
 // Given these two arrays, write a program that compares the numbers between the arrays and logs to the console any numbers that are in both arrays. (HINT: Nested for loops can be useful)
 
 const myArray = [6, 20, 19, 17];
@@ -17,6 +30,14 @@ for (let i = 0; i < myArray.length; i++) {
         }
     }
 }
+
+//-----------------------------------------------------------------------------
+
+/*
+    INTRO!
+
+    Last course we introduced the basics of arrays, and today you're going to learn more about how to manage and manipulate them further.
+*/
 
 //-----------------------------------------------------------------------------
 
@@ -49,7 +70,7 @@ console.log(myHouses);
 // You can even save the .pop() method to a variable if you want.
 
 // TASK 1
-// You are given this array of unreleased films and your task is to remove the last element in the aray since that movie has been released now. Save the removed element to variable called todaysRelease, and the log the array to the console to check your work.
+// You are given this array of unreleased films and your task is to remove the last element in the aray since that movie is being released today. Save the removed element to variable called todaysRelease, and the log the array to the console to check your work.
 const unreleasedFilms = ['Space Jam', 'Avatar 2', 'The Dig'];
 
 // ANSWER
@@ -75,8 +96,9 @@ chores.push('stir cheese', 'mow lawn');
 
 // FILTER METHOD
 
-// You organized a local food truck event and as requested you received the ages of the customers from the first hour of the event. Your goal is to create a new array from this data that only contains ages that are 18 and older so you can learn more about your customer base.
-// We can use the filter() method to accomplish this. The filter() method creates a new array with all the elements that satisfy a condition you give it.
+// You organized a local food truck event and as requested you received the ages of the customers from the first hour of the event in the for of an array. Your goal is to create a new array from this data that only contains ages that are 18 and older, so you can learn more about your customer base.
+
+// To do this, we can use the filter() method to accomplish this. The filter() method creates a new array with all the elements from the original array that satisfy a condition you create.
 const ages = [12, 32, 49, 18, 21, 20, 6, 50, 16];
 
 // Go over the syntax (declaration, callback function) and explain the logic of the steps here.
