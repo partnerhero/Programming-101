@@ -31,6 +31,20 @@ for (let i = 0; i < myArray.length; i++) {
     }
 }
 
+const theirArray = [99, 7, 20, 31];
+
+for (let i = 0; i < myArray.length; i++) {
+    for (let j = 0; j < yourArray.length; j++) {
+        for (let k = 0; k < theirArray.length; k++) {
+            if (myArray[i] === yourArray[j] && myArray[i] === theirArray[k]) {
+                console.log(
+                    'The number ' + theirArray[k] + ' is in all three arrays'
+                );
+            }
+        }
+    }
+}
+
 //-----------------------------------------------------------------------------
 
 /*
