@@ -6,9 +6,6 @@
 const myArray = [6, 20, 19, 17];
 const yourArray = [20, 17, 23, 5];
 
-const myArray = [6, 20, 19, 17];
-const yourArray = [20, 17, 23, 5];
-
 for (let i = 0; i < myArray.length; i++) {
     for (let j = 0; j < yourArray.length; j++) {
         if (myArray[i] === yourArray[j]) {
