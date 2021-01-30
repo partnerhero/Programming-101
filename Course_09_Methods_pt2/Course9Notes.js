@@ -1,11 +1,32 @@
 // Course 9 - Array Methods Continued!
 
-// Very quick review:
-// indexOf()
-// .pop()
-// .shift() - same as .pop() but removes one or more elements from the BEGINNING of an array and returns the removed element
+// Very quick review
 
 // Any questions about any of the homework questions or concepts we've covered so far?
+
+// Daniel's CHALLENGE ZONE
+// You have a list of ages of people visiting your website:
+const ages = [25, 74, 65, 23, 18, 42, 77, 58, 22, 30, 33, 87, 44, 19];
+// 1. Let's sort this array! "SELECTION SORT"
+for (let i = 0; i < ages.length; i++) {
+    for (let j = i + 1; j < ages.length; j++) {
+        if (ages[i] < ages[j]) {
+            const oldValue = ages[i];
+            ages[i] = ages[j];
+            ages[j] = oldValue;
+        }
+    }
+}
+console.log(ages);
+
+// 2. What is the average age of the people visiting the site?
+let total = 0;
+
+for (let i = 0; i < ages.length; i++) {
+    total += ages[i];
+}
+
+const average = Math.floor(total / ages.length);
 
 //--------------------------------------------------------------------
 
@@ -24,17 +45,19 @@ chores.push('stir cheese', 'mow lawn');
 
 // FOREACH METHOD
 
-// .forEach() - executes a provided function once for each array element. Note: this does not mutate any elements in the array
-// MORE HERE TO EXPLAIN EVERYTHING
-const fruits = ['mango', 'papaya', 'pineapple', 'kiwi'];
+// .forEach() - executes a provided task once for each array element. Note: this does not mutate any elements in the array. It's a lot like using a for loop to iterate through an array.
+const chores = ['wash dishes', 'do laundry', 'take out the trash'];
 
-// Iterate over fruits below
-fruits.forEach(fruitType => {
-    console.log('I want to eat a ' + fruitType);
+// Iterate over chores below
+chores.forEach(choreType => {
+    console.log('I need to ' + choreType);
 });
-// fruitType here is a parameter and acts as a placeholder for each element in the array
+// choreType here is a parameter and acts as a placeholder for each element in the array
 
-// TASK 3
+// Can also be written:
+chores.forEach(choreType => console.log('I want to eat a ' + choreType));
+
+// TASK 1
 // Given this array of numbers, use the forEach method to add 5 to and log each element to the console.
 const numbers = [17, 65, 288, 50, 0, 11, 99];
 
@@ -50,7 +73,6 @@ numbers.forEach(number => console.log(number + 5));
 // To do this, we can use the filter() method to accomplish this. The filter() method creates a new array with all the elements from the original array that satisfy a condition you create.
 const ages = [12, 32, 49, 18, 21, 20, 6, 50, 16];
 
-// Go over the syntax (declaration, callback function) and explain the logic of the steps here.
 const isAdult = ages.filter(age => {
     return age >= 18;
 });
