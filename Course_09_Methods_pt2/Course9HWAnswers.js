@@ -8,11 +8,21 @@ const tennisPlayers = ['Rafael Nadal', 'Roger Federer', 'Serena Williams', 'Andy
     a. What will the output of console.log(tennisPlayers.length) be? Run it and see if you're right!
     b. What will the output of console.log(tennisPlayers.indexOf('Roger Federer')) be? Run it and see if you're right!
     c. What will the output of console.log(tennisPlayers.indexOf('Andre Agassi')) be? Run it and see if you're right!
+
+    ANSWERS:
+    a: 4, b: 1, c: -1
 */
 
 //-------------------------------------------------------------------------------
 
 // 2. Write an array of your 3 favorite movies. Use the unshift method to remove the first movie in the array. Use the push method to add one new movie the the end of the array. Use the shift method to add a new movie to the beginning of the array. Console.log the array once you've finished.
+
+// ANSWER:
+const faveMovies = ['The Room', 'Parasite', 'Avengers'];
+faveMovies.pop();
+faveMovies.push('Inception');
+faveMovies.push('Scarface');
+console.log(faveMovies);
 
 //-------------------------------------------------------------------------------
 
@@ -24,15 +34,27 @@ for (i = 0; i < hobbies.length; i++) {
 
 // Try to accomplish the same thing as the above for loop, but now using the forEach method instead of a for loop.
 
+// ANSWER:
+hobbies.forEach(hobby => console.log(`${hobby} is fun to do!`));
+
 //-------------------------------------------------------------------------------
 
 // 4. Use the forEach method on the below array of colors to log each color name and index to the console. Example output: The color red is at index 0. Try to use the template literal format when logging your messages to the console.
 const colors = ['red', 'blue', 'black', 'purple', 'orange'];
 
+// ANSWER:
+colors.forEach(color => {
+    console.log(`The color ${color} is at index ${colors.indexOf(color)}`);
+});
+
 //-------------------------------------------------------------------------------
 
 // 5. You work for a life insurance company. Customers over 55 are eligible for a discount. Given the following array of customer ages, use the filter method to create a new array with only the ages that are >= 55. Log your new array to the console.
 const customerAges = [32, 47, 63, 55, 51, 59, 74, 41, 66];
+
+// ANSWER:
+const eligibleCustomers = customerAges.filter(age => age >= 55);
+console.log(eligibleCustomers);
 
 //-------------------------------------------------------------------------------
 
@@ -53,7 +75,7 @@ const halfNumbers = bigNumbers.map(bigNumber => {
     return bigNumber / 2;
 });
 
-// The resulting array is filled with elements from the original that have been divided by 2.
+// The resulting array is filled with elements from teh original that have been divided by 2.
 console.log(halfNumbers); // output: [12, 25, 20, 20]
 
 /*
@@ -67,6 +89,12 @@ Using the map method, fix the numbers so that they show the correct dollar amoun
 
 const dollarAmounts = [43500, 56000, 7900, 73200, 50000, 52200, 63000, 12400, 18300, 39700]; // prettier-ignore
 
+// ANSWER:
+const reducedDollarAmounts = dollarAmounts.map(dollarAmount => {
+    return dollarAmount / 100;
+});
+console.log(reducedDollarAmounts);
+
 //-------------------------------------------------------------------------------
 
 /*
@@ -79,6 +107,15 @@ const dollarAmounts = [43500, 56000, 7900, 73200, 50000, 52200, 63000, 12400, 18
 
 const raceTimesInMinutes = [8.543, 7.934, 8.919, 7.868, 7.547, 7.989, 8.641, 8.556, 7.632, 7.425, 8.96, 8.953, 7.622, 8.001, 8.609, 7.439, 7.59, 7.426, 8.202, 8.591, 10.309, 7.566, 8.307, 7.424]; // prettier-ignore
 
+// ANSWER:
+const raceTimesInSeconds = raceTimesInMinutes.map(raceTime => {
+    return raceTime * 60;
+});
+console.log(raceTimesInSeconds);
+
+const qualifyingTimes = raceTimesInSeconds.filter(raceTime => raceTime <= 460);
+console.log(qualifyingTimes);
+
 //-------------------------------------------------------------------------------
 
 /*
@@ -90,6 +127,11 @@ Use the .find() method on the array below to find the first element in the array
 */
 
 const numbers = [20, 18, 6, 27, 19, 7, 23, 23, 23, 9, 10, 16, 55, 130, 44, 80, 30, 35]; // prettier-ignore
+
+// ANSWER:
+const firstOver30 = numbers.find(number => number > 30);
+
+console.log(firstOver30); // output: 55
 
 //-------------------------------------------------------------------------------
 
@@ -106,5 +148,28 @@ const words = [happen, regards, through, alternate, laptop, scary, wonder, forgo
 
     HINT: You'll have to learn about what modulus (mod) is to use with a conditional statement to figure out which player's turn it is! Search online to see if you can figure it out!
 */
+
+// ANSWER:
+const words = ['happen', 'regards', 'through', 'alternate', 'laptop', 'scary', 'wonder', 'forgot', 'keychain', 'justice']; // prettier-ignore
+
+let longestWord = '';
+
+words.forEach(word => {
+    if (word.length > longestWord.length) {
+        longestWord = word;
+    }
+});
+
+console.log(longestWord); // output: alternate
+
+const winningIndex = words.indexOf(longestWord);
+console.log(winningIndex); // output: 3
+
+if (winningIndex % 2 === 0) {
+    console.log('You won');
+} else {
+    console.log('Other guy won');
+}
+// output: Other guy won
 
 //-------------------------------------------------------------------------------
