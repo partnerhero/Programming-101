@@ -49,16 +49,16 @@ chores.push('stir cheese', 'mow lawn');
 const chores = ['wash dishes', 'do laundry', 'take out the trash'];
 
 // Iterate over chores below
-chores.forEach(choreType => {
-    console.log('I need to ' + choreType);
+chores.forEach(chore => {
+    console.log(`I need to ${chore}`);
 });
 // choreType here is a parameter and acts as a placeholder for each element in the array
 
 // Can also be written:
-chores.forEach(choreType => console.log('I want to eat a ' + choreType));
+chores.forEach(chore => console.log(`I want to eat a ${chore}`));
 
 // TASK 1
-// Given this array of numbers, use the forEach method to add 5 to and log each element to the console.
+// Given this array of numbers, use the forEach method to console.log() each element with 5 added to it.
 const numbers = [17, 65, 288, 50, 0, 11, 99];
 
 // ANSWER
@@ -96,7 +96,7 @@ const words = [
 ];
 
 // ANSWER
-const result = words.filter(word => word.length <= 7);
+const result = words.filter(word => word.length > 6);
 console.log(result);
 
 //-----------------------------------------------------------
