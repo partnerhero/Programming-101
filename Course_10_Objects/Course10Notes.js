@@ -1,6 +1,6 @@
 // Objects
 
-// We can use javascript objects to model real-world things. Take a basketball for example, it has certain properties we can use to describe it. It has a color: white, and a shape: round. These are properties of this basketball.
+// We can use javascript objects to model real-world things. Take a basketball for example, it has certain properties we can use to describe it. It has a color: orange, and a shape: round. These are properties of this basketball.
 
 // In the case of Javascript, the object here is the soccer ball. A property of an object has a name and a value. For the soccer ball, color is the name of the property and orange is the value.
 // We can create this soccerBall object in Javascript like this:
@@ -16,6 +16,8 @@ const soccerBall = {
 // Accessing these properties is done using dot notation just like we did with the .length property on arrays.
 soccerBall.color;
 console.log(soccerBall.color); // output: 'white'
+
+//------------------------------------------
 
 // METHODS
 
@@ -61,10 +63,12 @@ console.log(home.rooms.bedroom.size); // output: 250
 //-------------------------------------------------
 
 // TASK 1
-// Build an object about of one your favorite movies.
-// 1. Create a title property
-// 2. Create a play method that when invoked, logs to the console a message stating that it will now play.
-// 3. Invoke the play method.
+/* 
+Build an object about of one your favorite movies.
+    1. Create a title property
+    2. Create a play method that when invoked, logs to the console a message stating that the movie will now play.
+    3. Invoke the play method.
+*/
 const favoriteMovie = {
     title: 'The Dark Knight',
     play() {
@@ -77,9 +81,9 @@ favoriteMovie.play();
 //-------------------------------------------------
 
 // The this keyword
-// When we want to refer to a property from within our object, we should reference the global object using the "this" keyword.
+// When we want to refer to or access a property from within our object, we should use the "this" keyword instead of the object by name. The "this" keyword refers to the "parent" object one level up.
 
-// An example would be using methods to change the properties in our objects. Let's say we want a method to increase the number of views on our video:
+// An example would be using methods to change the properties in our objects. Let's say we want a method to increase the number of views on a video we made:
 const myVideo = {
     uploadDate: '04/29',
     views: 1,
@@ -89,6 +93,26 @@ const myVideo = {
 };
 myVideo.addView();
 console.log(myVideo.views);
+
+// You can refer to the object by name, but a big reason why the "this" keyword can be so useful is because the name of our object can change without our method breaking. So in this way we wouldn't need to rewrite the method.
+
+// TASK 2
+/* 
+Create an object for a toy ghost that keeps track of how many times it scares people.
+    1. Give your onject a numberOfScares property that starts at 0.
+    2. Give your object a scare method that when called increases numberOfScares by 1.
+    3. Call the scare method a couple times then log numberOfScares to the console to make sure it's keeping track.
+*/
+
+const toyGhost = {
+    numberOfScares: 0,
+    scare() {
+        this.numberOfScares++;
+    },
+};
+toyGhost.scare();
+toyGhost.scare();
+console.log(toyGhost.numberOfScares);
 
 // Getters and Setters
 // Conveying Privacy
