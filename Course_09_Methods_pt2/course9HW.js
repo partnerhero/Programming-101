@@ -12,7 +12,7 @@ const tennisPlayers = ['Rafael Nadal', 'Roger Federer', 'Serena Williams', 'Andy
 
 //-------------------------------------------------------------------------------
 
-// 2. Write an array of your 3 favorite movies. Use the unshift method to remove the first movie in the array. Use the push method to add one new movie the the end of the array. Use the shift method to add a new movie to the beginning of the array. Console.log the array once you've finished.
+// 2. Write an array of your 3 favorite movies. Use the shift method to remove the first movie in the array. Use the push method to add one new movie the the end of the array. Use the unshift method to add a new movie to the beginning of the array. Console.log the array once you've finished.
 
 //-------------------------------------------------------------------------------
 
