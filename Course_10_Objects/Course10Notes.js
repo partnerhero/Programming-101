@@ -1,9 +1,17 @@
-// Objects
+// Course 10
 
-// We can use javascript objects to model real-world things. Take a basketball for example, it has certain properties we can use to describe it. It has a color: orange, and a shape: round. These are properties of this basketball.
+// Homework/review
+
+/*
+    Intro
+
+Today we're talking about objects in Javascript. Javascript is an object-oriented programming language, which essentially means that Javascript really shines when using objects. So we're going to learn the basics today!
+
+We can use javascript objects to model real-world things. Take a basketball for example, it has certain properties we can use to describe it. It has a color: orange, and a shape: round. These are properties of this basketball.
+*/
 
 // In the case of Javascript, the object here is the basketball. A property of an object has a name and a value. For the basketball, color is the name of the property and orange is the value.
-// We can create this soccerBall object in Javascript like this:
+// We can create this basketball object in Javascript like this:
 const basketball = {
     color: 'orange',
     shape: 'round',
@@ -17,7 +25,17 @@ const basketball = {
 basketball.color;
 console.log(basketball.color); // output: 'orange'
 
-//------------------------------------------
+//------------------------------------------------------------
+
+// TASK 1
+// Create a favoriteMovie object with one property to represent your favorite movie's title. Once you've created the object, log the title to the console.
+
+const favoriteMovie = {
+    title: 'The Dark Knight',
+};
+console.log(favoriteMovie.title);
+
+//------------------------------------------------------------
 
 // METHODS
 
@@ -40,25 +58,21 @@ basketball.donePlaying = () => {
     console.log('Are you really done, friend!?');
 };
 basketball.donePlaying();
-//-------------------------------------------------
 
-// TASK 1
-/* 
-Build an object about of one your favorite movies.
-    1. Create a title property
-    2. Create a play method that when invoked, logs to the console a message stating that the movie will now play.
-    3. Invoke the play method.
-*/
+//------------------------------------------------------------
+
+// TASK 2
+// Now add a play method to your favoriteMovie object that logs 'The movie will now play!' to the console when called. Call that method once it's added.
+
 const favoriteMovie = {
     title: 'The Dark Knight',
     play() {
         console.log('The movie will now play!');
     },
 };
-
 favoriteMovie.play();
 
-//-------------------------------------------------
+//------------------------------------------------------------
 
 // Nested Objects
 const home = {
@@ -79,12 +93,37 @@ const home = {
 
 console.log(home.rooms.bedroom.size); // output: 250
 
-//-------------------------------------------------
+//------------------------------------------------------------
 
-// TASK 2
-// Create a nested object to represent a SOMETHING website
+// TASK 3
+/*
+    Create a nested object to represent an airplane.
 
-//-------------------------------------------------
+    1. Your airplane object should have a cockpit object with a captains seat object and a first officer's seat object.
+    2. Each seat object should have an occupied property with a value of either true or false.
+    3. Your airplane object should also have a cabin object with 300 passenger seats and 5 emergency exits.
+    4. Create a method that logs "Taking off!" to the console when called.
+*/
+
+const airplane = {
+    cockpit: {
+        captainSeat: {
+            occupied: true,
+        },
+        firstOfficerSeat: {
+            occupied: false,
+        },
+    },
+    cabin: {
+        passengerSeats: 300,
+        emergencyExits: 5,
+    },
+    takeOff() {
+        console.log('Taking off!');
+    },
+};
+
+//------------------------------------------------------------
 
 // The this keyword
 // When we want to refer to or access a property from within our object, we should use the "this" keyword instead of the object by name. The "this" keyword refers to the "parent" object one level up.
@@ -100,11 +139,11 @@ const myVideo = {
 myVideo.addView();
 console.log(myVideo.views);
 
-// You can refer to the object by name, but a big reason why the "this" keyword can be so useful is because the name of our object can change without our method breaking. So in this way we wouldn't need to rewrite the method.
+// You can refer to the global object by name, but a big reason why the "this" keyword can be so useful is because the name of our object can change without our method breaking. So in this way we wouldn't need to rewrite the method.
 
-//------------------------------------------------------
+//------------------------------------------------------------
 
-// TASK 3
+// TASK 4
 /* 
 Create an object for a toy ghost that keeps track of how many times it scares people.
     1. Give your onject a numberOfScares property that starts at 0.
@@ -122,7 +161,7 @@ toyGhost.scare();
 toyGhost.scare();
 console.log(toyGhost.numberOfScares);
 
-//----------------------------------------------------------
+//------------------------------------------------------------
 
 // Getters and Setters
 // Conveying Privacy
