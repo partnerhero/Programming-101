@@ -1,11 +1,19 @@
-// Objects
+// Course 10
 
-// We can use javascript objects to model real-world things. Take a basketball for example, it has certain properties we can use to describe it. It has a color: orange, and a shape: round. These are properties of this basketball.
+// Homework/review
 
-// In the case of Javascript, the object here is the soccer ball. A property of an object has a name and a value. For the soccer ball, color is the name of the property and orange is the value.
-// We can create this soccerBall object in Javascript like this:
-const soccerBall = {
-    color: 'white',
+/*
+    Intro
+
+Today we're talking about objects in Javascript. Javascript is an object-oriented programming language, which essentially means that Javascript really shines when using objects. So we're going to learn the basics today!
+
+We can use javascript objects to model real-world things. Take a basketball for example, it has certain properties we can use to describe it. It has a color: orange, and a shape: round. These are properties of this basketball.
+*/
+
+// In the case of Javascript, the object here is the basketball. A property of an object has a name and a value. For the basketball, color is the name of the property and orange is the value.
+// We can create this basketball object in Javascript like this:
+const basketball = {
+    color: 'orange',
     shape: 'round',
 };
 
@@ -14,10 +22,20 @@ const soccerBall = {
 // A colon is used to separate the key and the value, and commas are used to separate each property.
 
 // Accessing these properties is done using dot notation just like we did with the .length property on arrays.
-soccerBall.color;
-console.log(soccerBall.color); // output: 'white'
+basketball.color;
+console.log(basketball.color); // output: 'orange'
 
-//------------------------------------------
+//------------------------------------------------------------
+
+// TASK 1
+// Create a favoriteMovie object with one property to represent your favorite movie's title. Once you've created the object, log the title to the console.
+
+const favoriteMovie = {
+    title: 'The Dark Knight',
+};
+console.log(favoriteMovie.title);
+
+//------------------------------------------------------------
 
 // METHODS
 
@@ -41,6 +59,21 @@ basketball.donePlaying = () => {
 };
 basketball.donePlaying();
 
+//------------------------------------------------------------
+
+// TASK 2
+// Now add a play method to your favoriteMovie object that logs 'The movie will now play!' to the console when called. Call that method once it's added.
+
+const favoriteMovie = {
+    title: 'The Dark Knight',
+    play() {
+        console.log('The movie will now play!');
+    },
+};
+favoriteMovie.play();
+
+//------------------------------------------------------------
+
 // Nested Objects
 const home = {
     homeType: 'house',
@@ -60,25 +93,37 @@ const home = {
 
 console.log(home.rooms.bedroom.size); // output: 250
 
-//-------------------------------------------------
+//------------------------------------------------------------
 
-// TASK 1
-/* 
-Build an object about of one your favorite movies.
-    1. Create a title property
-    2. Create a play method that when invoked, logs to the console a message stating that the movie will now play.
-    3. Invoke the play method.
+// TASK 3
+/*
+    Create a nested object to represent an airplane.
+
+    1. Your airplane object should have a cockpit object with a captains seat object and a first officer's seat object.
+    2. Each seat object should have an occupied property with a value of either true or false.
+    3. Your airplane object should also have a cabin object with 300 passenger seats and 5 emergency exits.
+    4. Create a method that logs "Taking off!" to the console when called.
 */
-const favoriteMovie = {
-    title: 'The Dark Knight',
-    play() {
-        console.log('The movie will now play!');
+
+const airplane = {
+    cockpit: {
+        captainSeat: {
+            occupied: true,
+        },
+        firstOfficerSeat: {
+            occupied: false,
+        },
+    },
+    cabin: {
+        passengerSeats: 300,
+        emergencyExits: 5,
+    },
+    takeOff() {
+        console.log('Taking off!');
     },
 };
 
-favoriteMovie.play();
-
-//-------------------------------------------------
+//------------------------------------------------------------
 
 // The this keyword
 // When we want to refer to or access a property from within our object, we should use the "this" keyword instead of the object by name. The "this" keyword refers to the "parent" object one level up.
@@ -94,9 +139,11 @@ const myVideo = {
 myVideo.addView();
 console.log(myVideo.views);
 
-// You can refer to the object by name, but a big reason why the "this" keyword can be so useful is because the name of our object can change without our method breaking. So in this way we wouldn't need to rewrite the method.
+// You can refer to the global object by name, but a big reason why the "this" keyword can be so useful is because the name of our object can change without our method breaking. So in this way we wouldn't need to rewrite the method.
 
-// TASK 2
+//------------------------------------------------------------
+
+// TASK 4
 /* 
 Create an object for a toy ghost that keeps track of how many times it scares people.
     1. Give your onject a numberOfScares property that starts at 0.
@@ -113,6 +160,8 @@ const toyGhost = {
 toyGhost.scare();
 toyGhost.scare();
 console.log(toyGhost.numberOfScares);
+
+//------------------------------------------------------------
 
 // Getters and Setters
 // Conveying Privacy
@@ -163,6 +212,12 @@ console.log(user.fullName);
 // Getter methods are not called using parethenses, the syntax is like accessing a property. You can use conditionals inside getter methods as well.
 // Getters are used to access properties
 
+//-------------------------------------------------------------
+
+// TASK 4
+
+//-------------------------------------------------------------
+
 // Setters
 // Used to indirectly make changes to properties.
 // Let's create a setter to be able to change the age property:
@@ -189,7 +244,7 @@ console.log(user.age);
 
 //------------------------------------------
 
-// TASK 2
+// TASK 5
 // 1. Create a car object with make and miles properties. Make sure you indicate that these are not to be accessed directly.
 // 2. Create getters for each property as to be able to indirectly access the properties
 // 3. Create a setter for the miles peroperty that takes an argument and changes the miles on the car
@@ -207,7 +262,7 @@ const car = {
     },
 };
 
-//------------------------------------------
+//--------------------------------------------------
 
 // Specific methods
 
