@@ -29,6 +29,13 @@ for (i = 0; i < hobbies.length; i++) {
 // 4. Use the forEach method on the below array of colors to log each color name and index to the console. Example output: The color red is at index 0. Try to use the template literal format when logging your messages to the console.
 const colors = ['red', 'blue', 'black', 'purple', 'orange'];
 
+colors.forEach(nameOfTheColor => {
+    console.log(
+        `The color ${nameOfTheColor} is at the index ` +
+            nameOfTheColor.indexOf('red')
+    );
+});
+
 //-------------------------------------------------------------------------------
 
 // 5. You work for a life insurance company. Customers over 55 are eligible for a discount. Given the following array of customer ages, use the filter method to create a new array with only the ages that are >= 55. Log your new array to the console.

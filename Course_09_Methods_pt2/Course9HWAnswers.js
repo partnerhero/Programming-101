@@ -19,16 +19,16 @@ const tennisPlayers = ['Rafael Nadal', 'Roger Federer', 'Serena Williams', 'Andy
 
 // ANSWER:
 const faveMovies = ['The Room', 'Parasite', 'Avengers'];
-faveMovies.pop();
+faveMovies.shift();
 faveMovies.push('Inception');
-faveMovies.push('Scarface');
+faveMovies.unshift('Scarface');
 console.log(faveMovies);
 
 //-------------------------------------------------------------------------------
 
 // 3. Remember this prompt from a previous homework? "Using the array: const hobbies = ['playing video games', 'snorkeling', 'rock climbing', 'playing piano'], write a for loop that iterates through the array and prints "<hobby> is fun to do!" for each hobby in the array."
 const hobbies = ['playing video games', 'snorkeling', 'rock climbing', 'playing piano']; // prettier-ignore
-for (i = 0; i < hobbies.length; i++) {
+for (let i = 0; i < hobbies.length; i++) {
     console.log(hobbies[i] + ' is fun to do!');
 }
 
@@ -140,7 +140,7 @@ console.log(firstOver30); // output: 55
 
 You and your friend are playing Scrabble and have made a bet: whoever can create the longest word wins! The following array shows the words that have been played; your friend's turn starts at index 0, yours starts at index 1, and you alternate turns.
 
-const words = [happen, regards, through, alternate, laptop, scary, wonder, forgot, keychain, justice];
+const words = ['happen', 'regards', 'through', 'alternate', 'laptop', 'scary', 'wonder', 'forgot', 'keychain', 'justice'];
 
     1. Using the foreach method, cycle through the array and save the longest element to a variable. (Hint: if this element is longer than the previously longest variable, reassign the variable.)
 
@@ -165,11 +165,12 @@ console.log(longestWord); // output: alternate
 const winningIndex = words.indexOf(longestWord);
 console.log(winningIndex); // output: 3
 
+// If the winningIndex divided by 2 has a remainder equal to 0, that means the index is even and the person who went first (your friend) won. If not, then you won.
 if (winningIndex % 2 === 0) {
-    console.log('You won');
+    console.log('Your friend won!');
 } else {
-    console.log('Other guy won');
+    console.log('You won!');
 }
-// output: Other guy won
+// output: You won!
 
 //-------------------------------------------------------------------------------
