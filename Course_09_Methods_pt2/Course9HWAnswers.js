@@ -15,20 +15,20 @@ const tennisPlayers = ['Rafael Nadal', 'Roger Federer', 'Serena Williams', 'Andy
 
 //-------------------------------------------------------------------------------
 
-// 2. Write an array of your 3 favorite movies. Use the unshift method to remove the first movie in the array. Use the push method to add one new movie the the end of the array. Use the shift method to add a new movie to the beginning of the array. Console.log the array once you've finished.
+// 2. Write an array of your 3 favorite movies. Use the shift method to remove the first movie in the array. Use the push method to add one new movie the the end of the array. Use the unshift method to add a new movie to the beginning of the array. Console.log the array once you've finished.
 
 // ANSWER:
 const faveMovies = ['The Room', 'Parasite', 'Avengers'];
-faveMovies.pop();
+faveMovies.shift();
 faveMovies.push('Inception');
-faveMovies.push('Scarface');
+faveMovies.unshift('Scarface');
 console.log(faveMovies);
 
 //-------------------------------------------------------------------------------
 
 // 3. Remember this prompt from a previous homework? "Using the array: const hobbies = ['playing video games', 'snorkeling', 'rock climbing', 'playing piano'], write a for loop that iterates through the array and prints "<hobby> is fun to do!" for each hobby in the array."
 const hobbies = ['playing video games', 'snorkeling', 'rock climbing', 'playing piano']; // prettier-ignore
-for (i = 0; i < hobbies.length; i++) {
+for (let i = 0; i < hobbies.length; i++) {
     console.log(hobbies[i] + ' is fun to do!');
 }
 

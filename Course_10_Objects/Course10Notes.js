@@ -53,7 +53,10 @@ basketball.playMessage();
 
 // We can assign properties and methods outside of the object as well:
 basketball.weight = 1.4;
+// Your basketball is dirty now, so let's reassign the color
+basketball.color = 'brown';
 console.log(basketball);
+
 basketball.donePlaying = () => {
     console.log('Are you really done, friend!?');
 };
@@ -66,10 +69,12 @@ basketball.donePlaying();
 
 const favoriteMovie = {
     title: 'The Dark Knight',
-    play() {
-        console.log('The movie will now play!');
-    },
 };
+
+favoriteMovie.play = () => {
+    console.log('The movie will now play!');
+};
+
 favoriteMovie.play();
 
 //------------------------------------------------------------
