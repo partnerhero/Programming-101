@@ -21,3 +21,31 @@ const home = {
 console.log(home.rooms.bedroom.size); // output: 250
 
 // You just placed an order for two pizzas and and you want to practice building objects in Javascript, so you decide to build your pizza order as an object. Get creative! :) Some ideas could include dough type, toppings, size, and cost! Try to come up with a single order of two different pizzas in your object. Be sure to include a method in your object that logs a 'Delivered!' message to the console when called.
+const pizzaOrder = {
+    pizza1: {
+        dough: 'gluten free',
+        crust: 'flat',
+        size: 'Medium',
+        toppings: {
+            pepperoni: false,
+            olives: true,
+            'extra cheese': true,
+            mushrooms: true,
+        },
+    },
+    pizza2: {
+        dough: 'sour',
+        crust: 'stuffed',
+        size: 'hella big',
+        toppings: {
+            pepperoni: true,
+            olives: false,
+            'extra cheese': true,
+            mushrooms: false,
+        },
+    },
+    totalPrice: 44.0,
+    deliver() {
+        console.log('Delivered!');
+    },
+};
