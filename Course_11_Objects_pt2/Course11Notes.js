@@ -122,25 +122,6 @@ console.log(user.fullName);
 
 //-------------------------------------------------------------
 
-// TASK 2
-/*
-1. Create a car object with a make property and a miles property. Make sure you indicate that these are not to be accessed directly.
-2. Create getters for each property as to be able to indirectly access the properties.
-3. Once done, console.log the make property.
-*/
-const car = {
-    _make: 'Ford',
-    _miles: 150000,
-    get make() {
-        return this._make;
-    },
-    get miles() {
-        return this._miles;
-    },
-};
-
-//-------------------------------------------------------------
-
 // Setters
 // Used to indirectly make changes to properties.
 // Let's create a setter to be able to change the age property:
@@ -182,10 +163,12 @@ console.log(user.age);
 
 //-------------------------------------------------------------
 
-// TASK 3
+// TASK 2
 /*
-1. Go back to your car object and reate a setter for your miles property that takes one argument and reassigns the value of the miles property to whatever parameter is passed to it.
-2. Call your new method and set the miles to 160000
+1. Create a car object with make and miles properties. Make sure you indicate that these are not to be accessed directly.
+2. Create getters for each property as to be able to indirectly access the properties.
+3. Create a setter for the miles peroperty that takes an argument and reassigns the miles on the car to the argument.
+4. Call your setter and reassign the miles property to 10100.
 */
 const car = {
     _make: 'Ford',
@@ -254,7 +237,7 @@ console.log(young);
 
 //-------------------------------------------------------------
 
-// TASK 4
+// TASK 3
 
 // Ask the students each question after giving them the below
 
