@@ -16,7 +16,7 @@ const pizzaOrder = {
     pizza2: {
         dough: 'sour',
         crust: 'stuffed',
-        size: 'hella big',
+        size: 'super big',
         toppings: {
             pepperoni: true,
             olives: false,
@@ -71,6 +71,7 @@ console.log(toyGhost.numberOfScares);
 //-------------------------------------------------------------
 
 // Getters and Setters
+
 // Conveying Privacy
 // In Javascript you'll often see an underscore in front of the property name, this is to indicate that the object property should not be accessed or changed directly, but rather through what are called getters and setters.
 
@@ -179,7 +180,7 @@ user.age = 'pan';
 console.log(user.age);
 */
 
-//------------------------------------------
+//-------------------------------------------------------------
 
 // TASK 3
 /*
@@ -200,9 +201,26 @@ const car = {
     },
 };
 
-//--------------------------------------------------
+//-------------------------------------------------------------
 
 // Object methods
+
+const coffee = {
+    grind: 'coarse',
+    brew: 'light',
+};
+
+// .entries()
+// The Object.entries method returns the key:value pairs from an object.
+console.log(Object.entries(coffee));
+
+// .keys()
+// The Object.keys() method, as the name implies, returns the keys.
+console.log(Object.keys(coffee));
+
+// .values()
+// The Object.values() method, as the name implies, returns the values.
+console.log(Object.values(coffee));
 
 // .assign()
 // The Object.assign() method assigns key:value pairs from existing objects and assigns them to a new object.
@@ -212,18 +230,6 @@ const obj1 = { color: 'red', type: 'car' };
 const obj2 = { color: 'blue', wheels: 6 };
 const newObject = Object.assign(obj1, obj2);
 console.log(newObject);
-
-// .entries()
-// The Object.entries method returns the key:value pairs from an object.
-console.log(Object.entries(newObject));
-
-// .keys()
-// The Object.keys() method, as the name implies, returns the keys.
-console.log(Object.keys(newObject));
-
-// .values()
-// The Object.values() method, as the name implies, returns the keys.
-console.log(Object.values(newObject));
 
 // .filter()
 // Returns the key:value pairs based on the condition set. Similar to array
@@ -246,9 +252,11 @@ const young = people.filter(person => person.age < 35);
 
 console.log(young);
 
-//----------------------------------------------
+//-------------------------------------------------------------
 
-// TASK 4 - List of answers provided in a game of 20 questions!
+// TASK 4
+
+// Ask the students each question after giving them the below
 
 // 1. Lightning round: what function will I call to get color, isSolid, and isEdible from myObject1?
 // 2. What function wil I call to get "blue, false, true, true" from myObject2?
@@ -273,4 +281,6 @@ const myObject3 = {
     shape: 'round',
 };
 
-//----------------------------------------------
+//-------------------------------------------------------------
+
+// End of course
