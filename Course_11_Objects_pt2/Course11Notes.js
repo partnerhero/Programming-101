@@ -214,27 +214,6 @@ const obj2 = { color: 'blue', wheels: 6 };
 const newObject = Object.assign(obj1, obj2);
 console.log(newObject);
 
-// .filter()
-// Returns the key:value pairs based on the condition set. Similar to array
-const people = {
-    person1: {
-        name: 'John',
-        age: 28,
-    },
-    person2: {
-        name: 'Jane',
-        age: 31,
-    },
-    person3: {
-        name: 'Peter',
-        age: 55,
-    },
-};
-
-const young = people.filter(person => person.age < 35);
-
-console.log(young);
-
 //-------------------------------------------------------------
 
 // TASK 3
