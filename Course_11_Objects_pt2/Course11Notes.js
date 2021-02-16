@@ -124,41 +124,40 @@ console.log(user.fullName);
 
 // Setters
 // Used to indirectly make changes to properties.
-// Let's create a setter to be able to change the age property:
+// Let's create a setter to be able to change the lastName property:
 let user = {
     _firstName: 'Josh',
     _lastName: 'Wilson',
-    _age: 32,
     get firstName() {
         return this._firstName;
+    },
+    get lastName() {
+        return this._lastName;
     },
     get fullName() {
         return this._firstName + ' ' + this._lastName;
     },
-    get age() {
-        return this._age;
-    },
-    set age(newAge) {
-        this._age = newAge;
+    set lastName(newName) {
+        this._lastName = newName;
     },
 };
 
-user.age = 55;
-console.log(user.age);
+user.lastName = 'Jilson';
+console.log(user.lastName);
 
-// Setters can allow for additional protections when writing programs. One example here would be to add an if statement to the setter that checks to make sure the parameter passed is a number.
+// Setters can allow for additional protections when writing programs. One example here would be to add an if statement to our setter to make sure we're reassigning lastName to a string.
 /*
 Briefly explain tyepof() because we have not talked about it yet.
 
-set age(newAge) {
-    if (typeof newAge === 'number') {
-        this._age = newAge;
+set lastName(newName) {
+    if (typeof newName === 'string') {
+        this._lastName = newName;
     } else {
-        console.log('Please enter a number.');
+        console.log('Please enter a string.');
     }
 
-user.age = 'pan';
-console.log(user.age);
+user.lastName = 27;
+console.log(user.lastName);
 */
 
 //-------------------------------------------------------------
@@ -194,15 +193,15 @@ const coffee = {
 };
 
 // .entries()
-// The Object.entries method returns the key:value pairs from an object.
+// The Object.entries method returns an array of the key:value pairs each as arrays from the object.
 console.log(Object.entries(coffee));
 
 // .keys()
-// The Object.keys() method, as the name implies, returns the keys.
+// The Object.keys() method, as the name implies, returns the keys as an array.
 console.log(Object.keys(coffee));
 
 // .values()
-// The Object.values() method, as the name implies, returns the values.
+// The Object.values() method, as the name implies, returns the values as an array.
 console.log(Object.values(coffee));
 
 // .assign()

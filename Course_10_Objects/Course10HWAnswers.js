@@ -36,7 +36,7 @@ const pizzaOrder = {
     pizza2: {
         dough: 'sour',
         crust: 'stuffed',
-        size: 'hella big',
+        size: 'super big',
         toppings: {
             pepperoni: true,
             olives: false,
@@ -49,3 +49,5 @@ const pizzaOrder = {
         console.log('Delivered!');
     },
 };
+
+// Your pizza order object may look different, and that's all right. You may decide to make your toppings a string instead of a boolean. You may have different properties even. That's all okay.
