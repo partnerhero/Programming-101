@@ -1,7 +1,8 @@
 // Course 12 - Classes
 
 // Classes are an easy way to create templates for creating objects. This is especially helpful when you want to create many similar objects.
-// It should be known that classes within Javascript are not nearly as robust as classes in other programming languages. This lesson is merely to introduce you to the concept so you're familiar with the idea. We recommend reading some literature online to find out more details about why classes arelacking in Javascript.
+
+// It should be known that classes within Javascript are not nearly as robust as classes in other programming languages. This lesson is merely to introduce you to the concept so you're familiar with the idea. We recommend reading some literature online to find out more details about why classes are lacking in Javascript.
 
 // You run a daycare and need to keep track of the kids that are enrolled. You've been creating individual objects in Javascript to represent the children, but you've found out that classes can make this much easier for you.
 // Individual Kid Objects:
@@ -9,19 +10,15 @@ const misty = {
     _name: 'Misty',
     _age: 4,
     _demerits: 0,
-
     get name() {
         return this._name;
     },
-
     get age() {
         return this._age;
     },
-
     get demerits() {
         return this._demerits;
     },
-
     giveDemerit() {
         this._demerits++;
     },
@@ -31,52 +28,44 @@ const ash = {
     _name: 'Ash',
     _age: 5,
     _demerits: 3,
-
     get name() {
         return this._name;
     },
-
     get age() {
         return this._age;
     },
-
     get demerits() {
         return this._demerits;
     },
-
     giveDemerit() {
         this._demerits++;
     },
 };
 
-// Sure I can copy, paste, and make small edits of the above for every kid, but there's an easier way.
-// We can create a template called a class
+// Sure I could copy, paste, and make small edits of the above for every new kid, but there's an easier way to create objects with similar properties.
+
+// Talk through syntax. Note: capitalize class names, no commas
 class Kid {
-    // capitalize your class names!
     constructor(name, age) {
         this._name = name;
         this._age = age;
-        this._demerits = 0;
+        this._demerits = 0; // default/initial value here no parameter passed
     }
-
     get name() {
         return this._name;
     }
-
     get age() {
         return this._age;
     }
-
     get demerits() {
         return this._demerits;
     }
-
     giveDemerit() {
         this._demerits++;
     }
 }
 
-// This is just the template we've created, we need to create the kids still by instanciating an object:
+// This is just the template we've created, we need to create the kid objects still by instanciating an object:
 const brock = new Kid('Brock', 5);
 console.log(brock);
 console.log(brock.name);
@@ -85,27 +74,31 @@ console.log(brock.name);
 brock.giveDemerit();
 console.log(brock);
 
-// TASK
-// Create a student class with a name, major, and grade level with an initial value of 1. Create getters for each property and a method to increase the grade level by 1 when called. Then instantiate a student object using your newly created class!
+//----------------------------------------------------------------
+
+// TASK 1
+/*
+1. Create a Student class with _name and _major properties that each take an argument.
+2. Give it a _gradeLevel property with an initial value of 1.
+3. Create getters for each of these properties.
+4. Create a method to increase the grade level by 1 when called.
+5. Instantiate a student object using your newly created class!
+*/
 class Student {
     constructor(name, major) {
         this._name = name;
         this._major = major;
         this._gradeLevel = 1;
     }
-
     get name() {
         return this._name;
     }
-
     get major() {
         return this._major;
     }
-
     get gradeLevel() {
         return this._gradeLevel;
     }
-
     gradeLevelUp() {
         this._gradeLevel++;
     }
@@ -114,25 +107,25 @@ class Student {
 const daniel = new Student('Daniel', 'Lion taming');
 console.log(daniel.major);
 
+//----------------------------------------------------------------
+
 // Parent and Child Classes
-// Sometimes you'll want to create several different objects that are all similar, but slightly different in some ways. In a case like this, you can use parent classes and child classes.
+// Sometimes you'll want to create several different objects that are all similar but slightly different in some ways. In a case like this, you can use parent and child classes.
 
 // Example: Imagine all the different employment positions available in a grocery store. Instead of creating independent and individual classes for each employment position, you can use parent and child classes to more easily organize incoming employees no matter what position they're hired for.
+
 // Start with the main parent class. This class should contain properties that are common to all of the employees.
 class Employee {
     constructor(name) {
         this._name = name;
         this._vacationDays = 18;
     }
-
     get name() {
         return this._name;
     }
-
     get vacationDays() {
         return this._vacationDays;
     }
-
     useVacation(days) {
         this._vacationDays -= days;
     }
@@ -146,25 +139,33 @@ class Deli extends Employee {
         super(name); // Super keyword must be the first line in your constructor
         this._safetyCertification = safetyCertification;
     }
-
     get safetyCertification() {
         return this._safetyCertification;
     }
 }
 
 // extends keyword makes the getters and methods of the Employee class available inside the Deli class.
+
 // The super keyword calls the constructor of the parent class. In this case, super(name) passes the name argument of the Deli class to the constructor of the Employee class. When the Employee constructor runs, it sets this._name = name; for new Deli instances.
 // Make sure to use super() on the first line of your constructor
+
 // _safetyCertification is a new property that is unique to the Deli class, so we set it in the Deli constructor.
 
 // Call this the same way as before:
-const david = new Deli('David', true);
-console.log(david.safetyCertification);
-david.useVacation(3);
-console.log(david.vacationDays);
+const josh = new Deli('Josh', true);
+console.log(josh.safetyCertification);
+josh.useVacation(3);
+console.log(josh.vacationDays);
 
-// TASK!
-// Create a Butcher class that extends from Employee class, but add a boolean property that's entered as a paramter. This property should check whether the new butcher has passed the knife handling certification. Once done, call the Butcher class.
+//----------------------------------------------------------------
+
+// TASK 2
+// Paste the Employee class into the chat so the students can use it for this task.
+
+/*
+1. Create a Butcher class that extends from the Employee class, but add a boolean property that's entered as a parameter. This property should check whether the new butcher has passed the knife handling certification.
+2. Once done, call the Butcher class to create a new Butcher employee object and then log it to the console.
+*/
 class Butcher extends Employee {
     constructor(name, knifeHandlingCert) {
         super(name);
@@ -179,6 +180,10 @@ class Butcher extends Employee {
 const zach = new Butcher('Zach', true);
 console.log(zach);
 
+//----------------------------------------------------------------
+
+// SKIP THIS FOR NOW
+
 // Static Methods
 // Sometimes you will want a class to have methods that aren’t available in individual instances, but that you can call directly from the class.
 
@@ -190,7 +195,9 @@ const eid = Employee.generateIDNumber();
 console.log(eid);
 */
 
-//-------------------------------------------------------------------------------
+//----------------------------------------------------------------
+// END OF COURSE
+//----------------------------------------------------------------
 
 // HOMEWORK
 /*
@@ -207,19 +214,15 @@ class Automobile {
         this._model = model;
         this._miles = miles;
     }
-
     get make() {
         return this._make;
     }
-
     get model() {
         return this._model;
     }
-
     get miles() {
         return this._miles;
     }
-
     startCar() {
         console.log('starting car');
     }
@@ -231,11 +234,9 @@ class Truck extends Automobile {
         this._bedLength = bedLength;
         this._towingCap = towingCap;
     }
-
     get bedLength() {
         return this._bedLength;
     }
-
     get towingCap() {
         return this._towingCap;
     }
@@ -247,11 +248,9 @@ class Sedan extends Automobile {
         this._leather = leather;
         this._trunkSpace = trunkSpace;
     }
-
     get leather() {
         return this._leather;
     }
-
     get trunkSpace() {
         return this._trunkSpace;
     }
