@@ -64,6 +64,25 @@ console.log(newObject);
 5. Use the Object.keys() method on your pet object to store the keys of your object in a variable called petKeys. Log petKeys to the console.
 */
 
+const pet = {
+    _name: 'Parsley',
+    _age: 4,
+    get name() {
+        return this._name;
+    },
+    get age() {
+        return this._age;
+    },
+    set age(newAge) {
+        this._age = newAge;
+    },
+};
+pet.age = 6;
+console.log(pet.age);
+
+const petKeys = Object.keys(pet);
+console.log(petKeys);
+
 //------------------------------------------------------------------------
 
 /*
@@ -77,6 +96,28 @@ console.log(newObject);
 
 4. Create a growl method for your robot bear pet.
 */
+
+const robotBear = {
+    _name: 'Bear',
+    _model: 9000,
+    _batteryLevel: 60,
+    get name() {
+        return this._name;
+    },
+    get model() {
+        return this._model;
+    },
+    get batteryLevel() {
+        if (typeof this._batteryLevel) {
+            return this._batteryLevel;
+        } else {
+            return 'Error battery level must be number';
+        }
+    },
+    growl() {
+        return 'GRRR';
+    },
+};
 
 //------------------------------------------------------------------------
 

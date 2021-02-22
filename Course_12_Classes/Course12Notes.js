@@ -1,5 +1,42 @@
 // Course 12 - Classes
 
+// HW review
+// Anyone want to share one of the objects they made from the homework? If not:
+/*
+    Your pet!
+
+1. Create a pet object with name and age properties making sure to denote using the underscore (_) that they are not to be accessed directly.
+
+2. Create getters for the name and age properties in your pet object and console.log each property.
+
+3. Create a setter for the age property that allows you to reassign it.
+
+4. Reassign the age property and then log the age property to the console again to make sure it worked.
+
+5. Use the Object.keys() method on your pet object to store the keys of your object in a variable called petKeys. Log petKeys to the console.
+*/
+
+const pet = {
+    _name: 'Parsley',
+    _age: 4,
+    get name() {
+        return this._name;
+    },
+    get age() {
+        return this._age;
+    },
+    set age(newAge) {
+        this._age = newAge;
+    },
+};
+pet.age = 6;
+console.log(pet.age);
+
+const petKeys = Object.keys(pet);
+console.log(petKeys);
+
+//----------------------------------------------------------------
+
 // Classes are an easy way to create templates for creating objects. This is especially helpful when you want to create many similar objects.
 
 // It should be known that classes within Javascript are not nearly as robust as classes in other programming languages. This lesson is merely to introduce you to the concept so you're familiar with the idea. We recommend reading some literature online to find out more details about why classes are lacking in Javascript.
@@ -44,7 +81,12 @@ const ash = {
 
 // Sure I could copy, paste, and make small edits of the above for every new kid, but there's an easier way to create objects with similar properties.
 
-// Talk through syntax. Note: capitalize class names, no commas
+// Note: capitalize class names, no commas
+// constructor method is a special method used in classes for constructing objects. It takes parameters that you would want to pass when creating the object. In the block of the constructor is where we add the properties we want all of our objects to have.
+
+// Here we create a Kid class template that we'll want to pass name and age as arguments when registering a new kid in the childcare.
+
+// Talk through the logic of the constructor. (i.e. this._name = name mean when we create an ibject from this class it will give it a _name property key with a value of what we pass in as the argument)
 class Kid {
     constructor(name, age) {
         this._name = name;
@@ -65,7 +107,7 @@ class Kid {
     }
 }
 
-// This is just the template we've created, we need to create the kid objects still by instanciating an object:
+// This is just the template we've created, we need to create the kid objects still by calling the class.
 const brock = new Kid('Brock', 5);
 console.log(brock);
 console.log(brock.name);
@@ -82,7 +124,7 @@ console.log(brock);
 2. Give it a _gradeLevel property with an initial value of 1.
 3. Create getters for each of these properties.
 4. Create a method to increase the grade level by 1 when called.
-5. Instantiate a student object using your newly created class!
+5. Create a student object by calling your newly created class!
 */
 class Student {
     constructor(name, major) {
@@ -131,12 +173,26 @@ class Employee {
     }
 }
 
-// Let's call this the parent class. You can look at this like a generic template from which we can get more specific.
+// This Employee class is our parent class. You can look at this like a generic template from which we can create other templates to get more specific.
 
-// We have a service deli employee. We can create a deli class from the Employee class and add a property to represent whether they've passed a food safetly certification. This certification is not required for every employee, which is why we'll put in on this class:
+//----------------------------------------------------------------
+
+// One example would be creating a class for a Deli employee who needs an additional food safety certification that other employees do not need. Let's create a child class and work through it.
+
+// Syntax for creating a child class:
+// extends keyword allows us to create the child class and inherit all the methods from the parent class
+
+// constructor method begins the setup of properties like creating any other class
+
+// Inside the constructor of the child class, the first thing we must use is the super method, otherwise we get an error. The super() method here calls the parent's constructor method and gets access to the parent's properties. Inside the super method goes the parameters from the parent class that will need to be passed.
+
+// In this Deli class an additional parameter for food safety certification needs to be added, but only for a Deli employee. This is added inside the constructor of the child class below the super method.
+
+// Since we added a new property (_safetyCertification), we need to add a getter for it as well below the constructor method
+
 class Deli extends Employee {
     constructor(name, safetyCertification) {
-        super(name); // Super keyword must be the first line in your constructor
+        super(name);
         this._safetyCertification = safetyCertification;
     }
     get safetyCertification() {
@@ -144,16 +200,10 @@ class Deli extends Employee {
     }
 }
 
-// extends keyword makes the getters and methods of the Employee class available inside the Deli class.
-
-// The super keyword calls the constructor of the parent class. In this case, super(name) passes the name argument of the Deli class to the constructor of the Employee class. When the Employee constructor runs, it sets this._name = name; for new Deli instances.
-// Make sure to use super() on the first line of your constructor
-
-// _safetyCertification is a new property that is unique to the Deli class, so we set it in the Deli constructor.
-
 // Call this the same way as before:
 const josh = new Deli('Josh', true);
 console.log(josh.safetyCertification);
+
 josh.useVacation(3);
 console.log(josh.vacationDays);
 
@@ -164,14 +214,13 @@ console.log(josh.vacationDays);
 
 /*
 1. Create a Butcher class that extends from the Employee class, but add a boolean property that's entered as a parameter. This property should check whether the new butcher has passed the knife handling certification.
-2. Once done, call the Butcher class to create a new Butcher employee object and then log it to the console.
+2. Once done, call the Butcher class to create a new Butcher employee object and then log the object to the console.
 */
 class Butcher extends Employee {
     constructor(name, knifeHandlingCert) {
         super(name);
         this._knifeHandlingCert = knifeHandlingCert;
     }
-
     get knifeHandlingCert() {
         return this._knifeHandlingCert;
     }
@@ -181,83 +230,5 @@ const zach = new Butcher('Zach', true);
 console.log(zach);
 
 //----------------------------------------------------------------
-
-// SKIP THIS FOR NOW
-
-// Static Methods
-// Sometimes you will want a class to have methods that aren’t available in individual instances, but that you can call directly from the class.
-
-/* Syntax for static methods
-static generateIDNumber() {
-    return Math.floor(Math.random() * 100000);
-}
-const eid = Employee.generateIDNumber();
-console.log(eid);
-*/
-
-//----------------------------------------------------------------
 // END OF COURSE
 //----------------------------------------------------------------
-
-// HOMEWORK
-/*
-You own a car dealership and need to organize incoming inventory, so you decide to use what you learned from the amazing Programming 101 classes course to do that.
-1. Create a parent class Automobile with make, model, and miles as properties whose values come from parameters. Make sure to create getters for each of these properties. Create a method to start the car that logs 'starting car' to the console.
-2. Create a Truck subclass of the Automobile class that also includes bed length in feet and towing capacity in tons.
-3. Create a Sedan subclass of the Automobile class that also includes a leather property (boolean) and trunk space in cubic feet.
-4. Once done, create a new truck object and a new sedan object using your classes.
-*/
-
-class Automobile {
-    constructor(make, model, miles) {
-        this._make = make;
-        this._model = model;
-        this._miles = miles;
-    }
-    get make() {
-        return this._make;
-    }
-    get model() {
-        return this._model;
-    }
-    get miles() {
-        return this._miles;
-    }
-    startCar() {
-        console.log('starting car');
-    }
-}
-
-class Truck extends Automobile {
-    constructor(make, model, miles, bedLength, towingCap) {
-        super(make, model, miles);
-        this._bedLength = bedLength;
-        this._towingCap = towingCap;
-    }
-    get bedLength() {
-        return this._bedLength;
-    }
-    get towingCap() {
-        return this._towingCap;
-    }
-}
-
-class Sedan extends Automobile {
-    constructor(make, model, miles, leather, trunkSpace) {
-        super(make, model, miles);
-        this._leather = leather;
-        this._trunkSpace = trunkSpace;
-    }
-    get leather() {
-        return this._leather;
-    }
-    get trunkSpace() {
-        return this._trunkSpace;
-    }
-}
-
-const truck1 = new Truck('Ford', 'Ranger', 130000, 5, 3);
-console.log(truck1);
-
-const sedan1 = new Sedan('Toyota', 'Avalon', 160000, false, 15);
-console.log(sedan1);
