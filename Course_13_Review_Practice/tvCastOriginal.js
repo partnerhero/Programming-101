@@ -1,7 +1,8 @@
 /*
 
-You are the casting director for a brand new show tasked with finding the perfect trio of actors to play the roles of parent, child, and grandparent. Chemistry is very important, so you need the perfect combo. You decide to write a program that randomly generates combinations of 3 actors so as to not have to manually go through all of the available combinations.
-Each role has its own pool of actors that you will eventually create yourself once your program is built.
+You are a casting director for a brand new comedy tv show and you need to choose the actors and actresses who will play three different roles. You need to pick who will play the parent, the child, and the grandparent on this show. These three characters will get a lot of screen time together, so you need to make sure they all have great chemistry with each other while also considering the total cost.
+
+Since so many people tried out for the parts, you decide to build a program that randomly puts three actors together to create your cast. This way you can easily run your program over and over again to show you different random trios to help decide if the three actors might fit together and how much they will cost.
 
 Steps:
 1. Create an empty object named cast.
