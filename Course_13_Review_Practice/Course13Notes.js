@@ -50,12 +50,12 @@ const outstandingProjects = [
     'water grass',
 ];
 
-const completedProjects = outstandingProjects.filter(
-    project => outstandingProjects.indexOf(project) <= 3
-);
+const completedProjects = outstandingProjects.filter(project => {
+    return outstandingProjects.indexOf(project) <= 3;
+});
 
-const removeFinished = numProjects => {
-    for (let i = 0; i < numProjects; i++) {
+const removeProjects = num => {
+    for (let i = 0; i < num; i++) {
         outstandingProjects.shift();
     }
 };
@@ -81,7 +81,7 @@ You are on a construction crew building a new house to a potential buyer’s spe
 2. Create a nested object list of rooms containing the following info:
 bedroom { size: 700, floor: carpet}
 bathroom { size: 600, floor: tile, shower: true}
-kitchen { size: 600, floor: linoleum}
+kitchen { size: 600, floor: wood}
 */
 
 const myHome = {
@@ -100,7 +100,7 @@ const myHome = {
         },
         kitchen: {
             size: 600,
-            floor: 'linoleum',
+            floor: 'wood',
         },
     },
 };
