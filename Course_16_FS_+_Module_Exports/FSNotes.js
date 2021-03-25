@@ -99,20 +99,6 @@
 ​
 //---------------------------------------------------------------------------------
 ​
-//NAVIGATING THE TERMINAL
-/*  
-    We're going to be navigating through the terminal 
-    more and more as we add additional files, imports, 
-    and dependencies to our project.
-​
-    As a quick reminder, we can use "cd" to move around 
-    in directories.
-    "cd .." allows you to move back a file.
-    "cd <path/folder name>" allows you to access that folder.
-    "cd" will take you to your root directory.
-    "ls" (or "dir" on Windows) will allow you to view the folders available to you.
-*/
-​
 //FILE SYSTEM INTRO:
 /*
 ('fs' is​ technically a package, but it is prebuilt into
