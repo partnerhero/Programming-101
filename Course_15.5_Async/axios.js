@@ -7,7 +7,7 @@
 
     First, let's import axios to our http.js file.
 */
-let axios = require("axios");
+let axios = require('axios');
 
 /*
     Axios relies on JavaScript Promise syntax, which is useful for asynchronous operations
@@ -40,7 +40,7 @@ axios.get(<url>).then((response) => {
 // To make our first HTTP requests, we'll be using a dummyAPI (http://dummy.restapiexample.com/api/v1/)
 // which simulates an employee database API.
 // Let's assign that URL to a global constant
-const API_URL = "http://dummy.restapiexample.com/api/v1/";
+const API_URL = 'http://dummy.restapiexample.com/api/v1/';
 
 /*
 
@@ -55,10 +55,10 @@ it is a string
 */
 
 const getRequest = () => {
-  axios.get(API_URL + "employees").then((response) => {
-    //Notice how we're logging response.data, not the entire response object
-    console.log(response.data);
-  });
+    axios.get(API_URL + 'employees').then(response => {
+        //Notice how we're logging response.data, not the entire response object
+        console.log(response.data);
+    });
 };
 
 // getRequest();
@@ -71,14 +71,14 @@ const getRequest = () => {
   that describe our employee. This particular API only requires a firstName and lastName. Let's try it out!
 */
 const postRequest = () => {
-  axios
-    .post(API_URL + "create", {
-      firstName: "Fred",
-      lastName: "Flintstone",
-    })
-    .then((response) => {
-      console.log(response);
-    });
+    axios
+        .post(API_URL + 'create', {
+            firstName: 'Fred',
+            lastName: 'Flintstone',
+        })
+        .then(response => {
+            console.log(response);
+        });
 };
 
 //postRequest();
@@ -95,13 +95,13 @@ const postRequest = () => {
 */
 
 const putRequest = () => {
-  axios
-    .put(API_URL + "update/619", {
-      firstName: "Freddy",
-    })
-    .then((response) => {
-      console.log(response);
-    });
+    axios
+        .put(API_URL + 'update/619', {
+            firstName: 'Freddy',
+        })
+        .then(response => {
+            console.log(response);
+        });
 };
 
 // putRequest();
