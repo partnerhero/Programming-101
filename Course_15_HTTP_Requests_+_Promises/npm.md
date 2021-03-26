@@ -1,6 +1,6 @@
 ### Quick Derail - NPM
 
-Code projects almost always will rely on third-party, or custom code. You may want to import either a utility library, or just another package that already does something that would be too complex to write ourselves. 
+Code projects almost always will rely on third-party, or custom code. You may want to import either a utility library, or just another package that already does something that would be too complex to write ourselves.
 
 There are many ways to import code into our project, and those vary depending on the language and framework. Fortunately, Node has a super simple way to manage this, called **NPM - or Node Package Manager.**
 
@@ -35,4 +35,4 @@ To confirm axios is installed, we can look at our package.json and it should be 
 
 ###### [Now let's break Facebook](https://media.tenor.co/images/9e291eef3933a6bd37da881b7cc05443/raw)
 
-###### [Now let's do some requests!](https://github.com/partnerhero/node-workshop/blob/master/Module_9/axios.js)
+###### [Now let's do some requests!](https://github.com/partnerhero/Programming-101/blob/master/Course_15.5_Async/axios.js)

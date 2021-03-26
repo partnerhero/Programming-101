@@ -46,4 +46,4 @@ Now, name the response code.
 
 ###### Now we're ready to start doing HTTP requests ourselves!
 
-But not before a [quick derail](https://github.com/partnerhero/node-workshop/blob/master/Module_9/npm.md) :station:
+But not before a [quick derail](https://github.com/partnerhero/Programming-101/blob/master/Course_15_HTTP_Requests_%2B_Promises/npm.md) :station:
