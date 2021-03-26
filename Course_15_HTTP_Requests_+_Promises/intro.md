@@ -6,11 +6,11 @@
 `--'  `--'   `--'      `--'   `--'         `--' '--'`------' `-----'--' `-----' `------'`-----'   `--'   `-----'
 ```
 
-Module 9 - Programming 101
+Course 15 - Programming 101
 
 #### In this module
 
-We'll learn what HTTP requests are, how are they helpful, their downsides, and how to make and receive requests.
+We'll learn what HTTP requests are, how are they helpful, what their downsides are, and how to make and receive requests.
 
 ##### So, what is HTTP?
 
