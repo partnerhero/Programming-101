@@ -23,7 +23,8 @@ Let's first open a new folder and create a new package.json. To do this:
 1. We'll open our terminal
 2. `cd` into your Github folder or wherever you want to store this project
 3. `mkdir http` to create a new folder called http
-4. `npm init` to create a new package.json
+4. `cd http` to move into your http folder
+5. `npm init` to create a new package.json
 
 We'll run through the steps here together.
 
