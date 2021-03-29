@@ -30,7 +30,7 @@ We'll run through the steps here together.
 
 Once we've finished, let's install our first dependency: axios.
 
-`npm install axios --save` to install axios locally
+`npm install axios` to install axios locally
 
 To confirm axios is installed, we can look at our package.json and it should be listed under dependencies.
 

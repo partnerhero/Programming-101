@@ -26,9 +26,9 @@ Imagine we have a notekeeper webapp that allows users to create, edit, and delet
 
 Are you telling me that we need to do this every time we want to just edit a simple note on my database?
 
-:bangbang: yes :bangbang:
+Heck no!
 
-#### Just Kidding - API
+#### We use - API
 
 REST allows developers to standardize CRUD actions by creating "endpoints" in our application that do these things. These endpoints are usually exposed in what we call an API, or application programming interface.
 
