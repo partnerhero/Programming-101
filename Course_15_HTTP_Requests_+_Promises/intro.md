@@ -10,7 +10,7 @@ Course 15 - Programming 101
 
 #### In this module
 
-We'll learn what HTTP requests are, how are they helpful, what their downsides are, and how to make and receive requests.
+We'll learn what HTTP requests are, how are they helpful, and how to make and receive requests.
 
 ##### So, what is HTTP?
 
