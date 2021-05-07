@@ -41,15 +41,33 @@ For practice, you write a function to tell you if you need to comb your hair dep
 Using Promise syntax, rewrite the following function so it runs asynchronously. Use the amazonOrder example above as a guide. When resolved, your hair should be combed, and when rejected, you should not need to comb your hair.
 */
 
-const combHair = hair => {
-    if (hair === 'messy') {
-        return 'You combed your hair.';
-    } else {
-        return 'You do not need to comb your hair.';
-    }
-};
+// const combHair = hair => {
+//     if (hair === 'messy') {
+//         return 'You combed your hair.';
+//     } else {
+//         return 'You do not need to comb your hair.';
+//     }
+// };
 
-console.log(combHair('messy'));
+// console.log(combHair('messy'));
+
+// Answer:
+const combHair = hair =>
+    new Promise((resolve, reject) => {
+        if (hair === 'messy') {
+            resolve('You combed your hair.');
+        } else {
+            reject('You do not need to comb your hair.');
+        }
+    });
+
+combHair('messy')
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 
 //--------------------------------------------------------------------
 
@@ -118,6 +136,27 @@ Make sure that when calling your POST request that you use the specified path to
 NOTE: Since this is a dummy API, the user will not actually be created in the database.
 */
 
+// Answer:
+// First these declarations if you don't have them already:
+// const axios = require('axios');
+// const API_URL = 'https://reqres.in/api/';
+
+const postRequest = path => {
+    axios
+        .post(API_URL + path, {
+            name: 'Faridah',
+            job: 'Developer',
+        })
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+};
+
+postRequest('users');
+
 //--------------------------------------------------------------------
 
 /*
@@ -131,6 +170,25 @@ If successful, the returned response object should show the new job and the time
 NOTE: Since this is a dummy API, the database will not actually be updated.
 */
 
+// Answer:
+// First these declarations if you don't have them already:
+// const axios = require('axios');
+// const API_URL = 'https://reqres.in/api/';
+const putRequest = path => {
+    axios
+        .put(API_URL + path, {
+            job: 'Senior Developer',
+        })
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+};
+
+putRequest('users/14');
+
 //--------------------------------------------------------------------
 
 /*
@@ -141,10 +199,15 @@ The dummy API site has the ability to both add users and register emails/passwor
 Create a new POST request that handles both creating a new user and registering an email/password depending on the parameters passed in.
 */
 
+// Answer:
+// First these declarations if you don't have them already:
+// const axios = require('axios');
+// const API_URL = 'https://reqres.in/api/';
+
 const postRequests = (path, newInfo) => {
     if (path === 'users') {
         axios
-            .post(API_URL + path, newUser)
+            .post(API_URL + path, newInfo)
             .then(response => {
                 console.log(response.data);
             })
