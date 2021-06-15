@@ -71,7 +71,7 @@ Note: We can change the endpoint by passing in part of the required url as a par
 
 const getRequest = path => {
     axios
-        .get(`${API_URL}${path}`)
+        .get(API_URL + path)
         .then(response => {
             // Notice how we get all this info as part of the response
             // If we add .data to response, we'll receive what we want
@@ -99,7 +99,7 @@ This particular API only requires a name and a job. Let's try it out!
 // Add your own name and dream job!
 const postRequest = path => {
     axios
-        .post(`${API_URL}${path}`, {
+        .post(API_URL + path, {
             name: 'Josh',
             job: 'developer',
         })
@@ -124,7 +124,7 @@ Notice that the URL lets us update the name and the job.
 
 const putRequest = path => {
     axios
-        .put(`${API_URL}${path}`, {
+        .put(API_URL + path, {
             name: 'Joshua',
             job: 'Junior Developer',
         })
@@ -136,3 +136,23 @@ const putRequest = path => {
 putRequest('users/2');
 
 //---------------------------------------------------------------------
+
+// master function
+// let's make it so that we retrieve a user's data and then update it.
+// GET and PUT
+const updateUserData = (path, job) =>
+    new Promise((resolve, reject) => {
+        // get user data
+        getRequest(path).then(userData => {
+            // add keyword to end of job title
+            userData.job = job;
+            // update user data
+            putRequest(path, userData).then(result => {
+                resolve(result);
+            });
+        });
+    });
+
+updateUserData('users/2', 'Senior Dev').then(result => {
+    console.log(result);
+});

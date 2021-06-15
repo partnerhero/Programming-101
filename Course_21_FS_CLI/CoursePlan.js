@@ -36,16 +36,20 @@ Course 18
         axios?
 
 Course 19
+    Review
+        Update User Website
+
+Course 20
     Imports/Exports
     FS Methods
 
-Course 20
+Course 21
     CLI
 
-Course 21
+Course 22
     Comprehensive Review
 
-Courses 22-24
+Courses 23-25
     Final Project
 
 */
