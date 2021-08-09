@@ -1,6 +1,6 @@
 const chalk = require('chalk');
 
-// Main logic to return car list.
+// Main logic to return the list of cars
 module.exports = db => {
     console.log(
         chalk.blue.bold(

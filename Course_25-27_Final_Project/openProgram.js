@@ -20,11 +20,11 @@ const introQuestions = [
     },
 ];
 
-// Main program/prompt.
+// Main prompt
 // Also loads title on each iteration of main prompt.
 const openProgram = () => {
     console.clear();
-    console.log(chalk.red(figlet.textSync('Car Management Tool')));
+    console.log(chalk.red(figlet.textSync('Car Manager')));
     inquirer.prompt(introQuestions).then(answers => {
         if (answers.Intro === 'List cars currently in the lot') {
             console.clear();
@@ -45,11 +45,9 @@ const openProgram = () => {
                     console.log(error);
                     exitPrompt();
                 });
-        } else if (answers.Intro === 'Exit tool') {
+        } else if (answers.Intro === 'Exit Program') {
             console.log(
-                chalk.blue.italic(
-                    '\nThank you for using our management tool, have a great day!\n\n'
-                )
+                chalk.blue('\nThanks for using Car Manager! Peace!\n\n')
             );
         }
     });
@@ -61,16 +59,14 @@ const exitPrompt = () => {
             type: 'list',
             name: 'Outro',
             message: 'What would you like to do next?',
-            choices: ['Go back to main menu', 'Exit tool'],
+            choices: ['Go back to main menu', 'Exit program'],
         })
         .then(answers => {
             if (answers.Outro == 'Go back to main menu') {
                 openProgram();
             } else {
                 console.log(
-                    chalk.blue.italic(
-                        '\nThank you for using our management tool, have a great day!\n\n'
-                    )
+                    chalk.blue('\nThanks for using Car Manager! Peace!\n\n')
                 );
             }
         });
