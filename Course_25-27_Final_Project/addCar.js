@@ -26,7 +26,7 @@ const addQuestions = [
 module.exports = db =>
     new Promise((resolve, reject) => {
         console.clear();
-        console.log(chalk.blue.bold("Alright, let's add a car:\n\n"));
+        console.log(chalk.blue.bold("Let's add a car:\n\n"));
         inquirer.prompt(addQuestions).then(answers => {
             const carID = Math.floor(Math.random() * 99999);
             db.push('/carArray[]', {

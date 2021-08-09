@@ -5,30 +5,25 @@ const inquirer = require('inquirer');
 const removeQuestions = [
     {
         name: 'carID',
-        message:
-            "Enter the ID of the car to remove (if you don't know the car's ID, check it in the lot list):",
+        message: 'Enter the ID of the car to remove (check list if not known):',
     },
 ];
 
 // Main logic to remove a car.
-module.exports = soldCar =>
+module.exports = db =>
     new Promise((resolve, reject) => {
         console.clear();
         inquirer.prompt(removeQuestions).then(answers => {
             // Check package literature for getIndex syntax
-            const carIndex = soldCar.getIndex(
-                '/carArray',
-                Number(answers.carID),
-                'id'
-            );
+            const carIndex = db.getIndex('/carArray', Number(answers.carID));
             // If this value exists, delete it.
             if (carIndex != -1) {
-                soldCar.delete(`/carArray[${carIndex}]`);
-                resolve(chalk.blue('\nThe specified car has been deleted!\n'));
+                db.delete(`/carArray[${carIndex}]`);
+                resolve(chalk.blue('\nThat car was deleted!\n'));
             } else {
                 reject(
                     chalk.red(
-                        '\nCould not find a car matching this value. Please double check the list of cars in the lot and try again.\n'
+                        '\nCould not find matching car. Please double check the list and try again.\n'
                     )
                 );
             }
